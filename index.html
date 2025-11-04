@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Juan F. Capitani | QA & Web Dev Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --text: #222;
+      --accent: #0077b6;
+      --muted: #555;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .topbar {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .7rem 1.4rem;
+    }
+    .brand {
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: var(--accent);
+    }
+    .hero {
+      max-width: 980px;
+      margin: 1.5rem auto 1rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.7rem 1.4rem 1.8rem;
+      display: flex;
+      gap: 1.4rem;
+      align-items: center;
+    }
+    .hero-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 18px;
+      background: #ddd;
+      background-size: cover;
+      background-position: top center;
+      flex: 0 0 130px;
+    }
+    .hero-text h1 {
+      margin: 0 0 .3rem;
+      font-size: 1.35rem;
+    }
+    .hero-roles {
+      margin-top: .5rem;
+      font-weight: 500;
+    }
+    .hero-links { margin-top: .6rem; font-size: .9rem; }
+    .hero-links a { color: var(--accent); text-decoration: none; }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto 3rem;
+      padding: 0 1.4rem;
+    }
+    section {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.3rem 1.5rem;
+      margin-top: 1.2rem;
+    }
+    section h2 {
+      margin-top: 0;
+      margin-bottom: .9rem;
+      font-size: 1.12rem;
+    }
+    .chip-list { display: grid; gap: .45rem; }
+    .chip {
+      background: rgba(0,119,182,0.07);
+      padding: .4rem .6rem .5rem;
+      border-radius: .7rem;
+      font-size: .9rem;
+    }
+    .tech-grid { display: grid; gap: .6rem; }
+    .tech-item {
+      background: rgba(0,0,0,0.02);
+      border-radius: .7rem;
+      padding: .5rem .6rem;
+      font-size: .9rem;
+    }
+
+    /* PROYECTOS */
+    .project { margin-bottom: 1.4rem; }
+    .project h3 {
+      margin-bottom: .4rem;
+      font-size: 1rem;
+    }
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: .6rem;
+      margin-top: .6rem;
+    }
+    .project-gallery img {
+      width: 100%;
+      aspect-ratio: 16 / 9;      /* todas con el mismo alto relativo */
+      object-fit: cover;
+      border-radius: .5rem;
+      background: #e9e9e9;
+      cursor: pointer;
+      transition: transform .2s ease;
+    }
+    .project-gallery img:hover {
+      transform: scale(1.01);
+    }
+
+    /* MODAL para ampliar imagen */
+    .img-modal {
+      display: none; /* se muestra con JS */
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .img-modal-content {
+      margin: 3rem auto;
+      display: block;
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: .5rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    }
+    .img-modal-close {
+      position: fixed;
+      top: 1.2rem;
+      right: 1.4rem;
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    .contact p { margin-bottom: .4rem; }
+    footer {
+      text-align: center;
+      font-size: .7rem;
+      color: #777;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 680px) {
+      .hero { flex-direction: column; align-items: flex-start; }
+      .hero-img { width: 120px; height: 120px; }
+      nav { display: none; }
+      .project-gallery {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">Juan F. Capitani</div>
+      <nav>
+        <a href="#about">About me</a>
+        <a href="#tech">Tech stack</a>
+        <a href="#projects">Featured projects</a>
+        <a href="#cv">Professional CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <!-- sube tu foto como img/profile.jpg al repo -->
+    <div class="hero-img" style="background-image:url('img/profile.jpg');"></div>
+    <div class="hero-text">
+      <h1>Welcome to my portfolio 👋</h1>
+      <p class="hero-roles">
+        QA Engineer – Automation, Manual Testing, API<br>
+        Web Dev – MEAN/MERN Stack<br>
+        Windows / Linux Server Management<br>
+        JavaScript · TypeScript · Java · Python
+      </p>
+      <div class="hero-links">
+        📧 <a href="mailto:juancapitanig@gmail.com">juancapitanig@gmail.com</a><br>
+        🔗 <a href="https://www.linkedin.com/in/juan-capitani-84366182/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- About -->
+    <section id="about" class="about">
+      <h2>About me</h2>
+      <p>Professional graduated in Philosophy, currently studying Systems Engineering, with a specialty in Quality Assurance (QA) and Web Development using MEAN/MERN Stack. I work with Selenium, Postman, Cypress, Jira and DevTools.</p>
+      <div class="chip-list">
+        <div class="chip">✍️ Writing test plans, user stories and use cases.</div>
+        <div class="chip">🧪 Designing and executing functional and regression test cases.</div>
+        <div class="chip">🐞 Defect reporting with severity/priority analysis in Jira.</div>
+        <div class="chip">🧠 Testing techniques: Equivalence partitioning, boundary value analysis, decision tables, use cases.</div>
+        <div class="chip">🔄 API testing using Postman.</div>
+        <div class="chip">🗃️ SQL & NoSQL database handling: tables, inserts, SQL/NoSQL queries.</div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech">
+      <h2>🛠️ Tech stack</h2>
+      <div class="tech-grid">
+        <div class="tech-item"><strong>1. MEAN/MERN Stack Web Dev</strong> – JavaScript/TypeScript, Node.js, Express, MongoDB, React/Angular.</div>
+        <div class="tech-item"><strong>2. QA Testing</strong> – UX/UI, APIs, mobile apps, databases, web apps/pages; Selenium, Cypress (learning), Postman, Jira.</div>
+        <div class="tech-item"><strong>3. Linux/Windows server admin</strong> – Web, SMTP, VPN servers; CMS, e-shops; Windows and Linux servers.</div>
+        <div class="tech-item"><strong>4. Programming languages</strong> – Experience coding in <strong>Java, Python and C++</strong> for backend, scripting and problem solving.</div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects">
+      <h2>📂 Featured projects</h2>
+
+      <!-- Project 1 -->
+      <article class="project">
+        <h3>1. Urban Routes – Manual Testing, Test Cases, Equivalence Classes</h3>
+        <p>
+          Manual QA project focused on validating the Urban Routes application using structured test design techniques.
+          I identified and documented equivalence classes and boundary values to reduce the number of test cases while
+          keeping full functional coverage. I created clear, reproducible test cases (inputs, steps, expected results,
+          pass/fail). I also built a flowchart and a mind map to describe how Urban Routes works and its main user paths,
+          improving communication and requirement traceability.
+        </p>
+        <div class="project-gallery">
+          <img src="img/urban-routes-eq-1.png" alt="Urban Routes test design 1">
+          <img src="img/urban-routes-eq-2.png" alt="Urban Routes test design 2">
+          <img src="img/urban-routes-eq-3.png" alt="Urban Routes test design 3">
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project">
+        <h3>2. Urban Routes – UI/UX Testing, Error Reporting</h3>
+        <p>
+          Quality assurance project focused on validating the user interface and user experience of the Urban Routes app.
+          I designed and documented manual test cases for each visible feature (“Reserve” button, “Car reserved” window,
+          cancellations, field validations) and for the UI/UX layer. Tests were executed in different screen resolutions
+          using Chrome and Firefox DevTools to verify responsive behavior. All issues were logged in Jira with steps to
+          reproduce, expected vs actual result, and evidence, to ensure usability, visual consistency and functional
+          stability across browsers.
+        </p>
+        <div class="project-gallery">
+          <img src="img/urban-routes-ui-1.png" alt="Urban Routes UI test 1">
+          <img src="img/urban-routes-ui-2.png" alt="Urban Routes UI test 2">
+          <img src="img/urban-routes-ui-3.png" alt="Urban Routes UI test 3">
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project">
+        <h3>3. Urban Grocers – API Testing</h3>
+        <p>
+          Service testing project focused on validating GraphQL, REST and SOAP APIs using Postman as the main tool.
+          I applied equivalence classes, functional testing and boundary testing to ensure APIs handled valid, invalid and
+          missing data correctly. I verified status codes, response structure and error handling. All defects were reported
+          in Jira with clear reproduction steps and expected vs actual result. This project extends the manual QA practices
+          from Urban Routes to the API layer.
+        </p>
+        <div class="project-gallery">
+          <img src="img/urban-grocers-api-1.png" alt="Urban Grocers API test 1">
+          <img src="img/urban-grocers-api-2.png" alt="Urban Grocers API test 2">
+          <img src="img/urban-grocers-api-3.png" alt="Urban Grocers API test 3">
+        </div>
+      </article>
+    </section>
+
+    <!-- Professional CV -->
+    <section id="cv">
+      <h2>📄 Professional CV</h2>
+      <p>You can view or download my full CV here:</p>
+      <p><a href="https://drive.google.com/file/d/1xE3pc_BmvCu_gJ6u0-LYEH9g9kKRcF8p/view?usp=sharing" style="color:var(--accent);text-decoration:none;" target="_blank" rel="noreferrer">Open my CV (Google Drive)</a></p>
+      <p>CV focused on QA Engineering, manual testing, API testing, web development and hybrid tech roles.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>📬 Contact</h2>
+      <p>Thank you for taking the time to visit my portfolio.</p>
+      <p>I’m actively looking for remote opportunities as QA Manual, Junior QA Automation or hybrid roles where I can contribute with detailed analysis, critical thinking and continuous quality improvement.</p>
+      <p>✨ Let’s talk! I’m ready to join your team.</p>
+      <p>Email: <a href="mailto:juancapitanig@gmail.com">juancapitanig@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/juan-capitani-84366182/" target="_blank" rel="noreferrer">linkedin.com/in/juan-capitani-84366182/</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Juan F. Capitani – QA & Web Development Portfolio
+  </footer>
+
+  <!-- Modal de imagen -->
+  <div id="imgModal" class="img-modal">
+    <span class="img-modal-close" id="imgModalClose">&times;</span>
+    <img class="img-modal-content" id="imgModalContent" alt="">
+  </div>
+
+  <script>
+    // Lightbox sencillo
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('imgModalContent');
+    const closeBtn = document.getElementById('imgModalClose');
+
+    document.querySelectorAll('.project-gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+        modalImg.alt = img.alt || '';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+      // cerrar si hace click fuera de la imagen
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
