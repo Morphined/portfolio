@@ -2,393 +2,663 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Juan F. Capitani | QA Engineer & Tech Professional</title>
+  <title>Juan F. Capitani | QA Engineer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#f5f5f5;--card:#fff;--text:#222;--accent:#0077b6;--accent-light:rgba(0,119,182,.07);--muted:#555;--radius:16px}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    header{background:var(--card);border-bottom:1px solid rgba(0,0,0,.03);position:sticky;top:0;z-index:999}
-    .topbar{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.4rem}
-    .brand{font-weight:600;letter-spacing:.03em}
-    nav a{margin-left:1rem;text-decoration:none;color:var(--muted);font-size:.9rem}
-    nav a:hover,nav a:focus{color:var(--accent)}
-    .hero{max-width:980px;margin:1.5rem auto 1rem;background:var(--card);border-radius:var(--radius);padding:1.7rem 1.4rem 1.8rem;display:flex;gap:1.4rem;align-items:center}
-    .hero-img{width:130px;height:130px;border-radius:18px;background:#ddd;background-size:cover;background-position:top center;flex:0 0 130px}
-    .hero-text h1{margin:0 0 .3rem;font-size:1.35rem}
-    .hero-roles{margin-top:.5rem;font-weight:500}
-    .hero-links{margin-top:.6rem;font-size:.9rem}
-    .hero-links a{color:var(--accent);text-decoration:none}
-    main{max-width:980px;margin:0 auto 3rem;padding:0 1.4rem}
-    section{background:var(--card);border-radius:var(--radius);padding:1.5rem 1.3rem;margin-top:1.2rem}
-    section h2{margin-top:0;margin-bottom:.9rem;font-size:1.12rem}
-    .chip-list{display:grid;gap:.45rem}
-    .chip{background:var(--accent-light);padding:.4rem .6rem .5rem;border-radius:.7rem;font-size:.9rem}
-    .tech-grid{display:grid;gap:.6rem}
-    .tech-item{background:rgba(0,0,0,.02);border-radius:.7rem;padding:.5rem .6rem;font-size:.9rem}
-    .lang-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
-    .lang-tag{background:var(--accent-light);padding:.25rem .6rem;border-radius:.5rem;font-size:.85rem}
-    .project{margin-bottom:1.8rem}
-    .project:last-child{margin-bottom:0}
-    .project h3{margin-bottom:.4rem;font-size:1rem}
-    .project-gallery{display:grid;grid-template-columns:repeat(3,minmax(180px,1fr));gap:.6rem;margin-top:.6rem}
-    .project-gallery img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:.5rem;background:#e9e9e9;cursor:pointer;transition:transform .2s ease}
-    .project-gallery img:hover{transform:scale(1.01)}
-    .project-tags{margin-top:.5rem;display:flex;flex-wrap:wrap;gap:.35rem}
-    .project-tag{background:rgba(0,0,0,.04);padding:.15rem .5rem;border-radius:.4rem;font-size:.78rem;color:var(--muted)}
-    .code-preview{background:#1e1e1e;color:#d4d4d4;border-radius:.5rem;padding:.8rem 1rem;font-family:Consolas,"Fira Code",monospace;font-size:.78rem;overflow-x:auto;margin-top:.6rem;line-height:1.5}
-    .code-preview .kw{color:#569cd6}
-    .code-preview .fn{color:#dcdcaa}
-    .code-preview .str{color:#ce9178}
-    .code-preview .cmt{color:#6a9955}
-    .img-modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,.8)}
-    .img-modal-content{margin:3rem auto;display:block;max-width:90%;max-height:85vh;border-radius:.5rem;box-shadow:0 15px 40px rgba(0,0,0,.35)}
-    .img-modal-close{position:fixed;top:1.2rem;right:1.4rem;color:#fff;font-size:2.2rem;font-weight:300;cursor:pointer}
-    .contact p{margin-bottom:.4rem}
-    footer{text-align:center;font-size:.7rem;color:#777;margin-bottom:2rem}
-    @media(max-width:680px){.hero{flex-direction:column;align-items:flex-start}.hero-img{width:120px;height:120px}nav{display:none}.project-gallery{grid-template-columns:repeat(2,minmax(120px,1fr))}}
+    :root {
+      --bg: #0f1117;
+      --surface: #181a20;
+      --surface-2: #1e2028;
+      --border: rgba(255,255,255,.06);
+      --text: #e4e4e7;
+      --text-muted: #8b8d97;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56,189,248,.12);
+      --green: #4ade80;
+      --orange: #fb923c;
+      --pink: #f472b6;
+      --radius: 14px;
+      --font: 'DM Sans', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.65; font-size: 15px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,17,23,.85); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .65rem 1.5rem;
+    }
+    .nav-brand { font-weight: 700; font-size: .95rem; letter-spacing: .02em; }
+    .nav-links a {
+      margin-left: 1.2rem; color: var(--text-muted); font-size: .82rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      max-width: 1060px; margin: 0 auto;
+      padding: 3.5rem 1.5rem 2.5rem;
+      display: flex; gap: 2rem; align-items: center;
+    }
+    .hero-photo {
+      width: 140px; height: 140px; border-radius: 20px; flex-shrink: 0;
+      background: url('img/profile.jpg') center/cover;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 40px rgba(56,189,248,.08);
+    }
+    .hero h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: .25rem; }
+    .hero-sub { color: var(--text-muted); font-size: .92rem; margin-bottom: .6rem; }
+    .hero-links { display: flex; gap: .8rem; flex-wrap: wrap; }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: .3rem;
+      background: var(--surface); border: 1px solid var(--border);
+      padding: .3rem .7rem; border-radius: 8px; font-size: .8rem;
+      color: var(--text-muted); transition: all .2s;
+    }
+    .hero-links a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+    /* SECTIONS */
+    .container { max-width: 1060px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 2.5rem 0 1rem; }
+    .section-title {
+      font-size: 1.1rem; font-weight: 700; margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .section-title::before {
+      content: ''; width: 3px; height: 18px; background: var(--accent);
+      border-radius: 2px; display: inline-block;
+    }
+
+    /* ABOUT CARD */
+    .about-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem 1.5rem;
+    }
+    .about-card p { color: var(--text-muted); font-size: .9rem; margin-bottom: .6rem; }
+    .about-card p:last-child { margin-bottom: 0; }
+    .about-card strong { color: var(--text); }
+
+    /* TOOL BADGES */
+    .tool-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+    .tool-badge {
+      background: var(--accent-glow); color: var(--accent);
+      padding: .2rem .55rem; border-radius: 6px; font-size: .75rem; font-weight: 500;
+      border: 1px solid rgba(56,189,248,.15);
+    }
+    .tool-badge.green { background: rgba(74,222,128,.1); color: var(--green); border-color: rgba(74,222,128,.15); }
+    .tool-badge.orange { background: rgba(251,146,60,.1); color: var(--orange); border-color: rgba(251,146,60,.15); }
+    .tool-badge.pink { background: rgba(244,114,182,.1); color: var(--pink); border-color: rgba(244,114,182,.15); }
+
+    /* LANGUAGES */
+    .lang-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
+    .lang-tag {
+      background: var(--surface-2); color: var(--text-muted);
+      padding: .2rem .55rem; border-radius: 6px; font-size: .78rem;
+      border: 1px solid var(--border);
+    }
+
+    /* PROJECT CARDS */
+    .projects-grid { display: grid; gap: 1.2rem; }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: border-color .25s, box-shadow .25s;
+    }
+    .project-card:hover {
+      border-color: rgba(56,189,248,.2);
+      box-shadow: 0 0 30px rgba(56,189,248,.05);
+    }
+    .project-body { padding: 1.3rem 1.4rem 1.4rem; }
+    .project-label {
+      font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--accent); margin-bottom: .4rem;
+    }
+    .project-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .6rem; }
+    .project-meta {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .5rem .8rem;
+      margin-bottom: .7rem;
+    }
+    .meta-item { font-size: .82rem; }
+    .meta-label { color: var(--text-muted); font-size: .72rem; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: .15rem; }
+    .project-desc { color: var(--text-muted); font-size: .85rem; margin-bottom: .7rem; }
+    .project-evidence {
+      background: var(--surface-2); border-radius: 10px; padding: .7rem .8rem;
+      margin-bottom: .7rem;
+    }
+    .evidence-label { font-size: .72rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .35rem; }
+    .evidence-list { font-size: .82rem; color: var(--text); }
+    .evidence-list li { margin-bottom: .2rem; }
+
+    .project-gallery {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem;
+      margin-top: .6rem;
+    }
+    .project-gallery.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .project-gallery.cols-1 { grid-template-columns: 1fr; }
+    .project-gallery img {
+      width: 100%; aspect-ratio: 16/10; object-fit: cover;
+      border-radius: 8px; border: 1px solid var(--border);
+      cursor: pointer; transition: opacity .2s;
+    }
+    .project-gallery img:hover { opacity: .85; }
+    .project-links { margin-top: .5rem; }
+    .project-links a {
+      font-size: .8rem; font-weight: 500;
+      display: inline-flex; align-items: center; gap: .3rem;
+    }
+
+    /* CODE BLOCK */
+    .code-block {
+      background: #12131a; border: 1px solid var(--border);
+      border-radius: 8px; padding: .7rem .9rem; margin-top: .5rem;
+      font-family: var(--mono); font-size: .72rem; line-height: 1.6;
+      overflow-x: auto; color: #c9d1d9;
+    }
+    .code-block .kw { color: #7ee787; }
+    .code-block .fn { color: #d2a8ff; }
+    .code-block .str { color: #a5d6ff; }
+    .code-block .cmt { color: #484f58; }
+
+    /* EXPERIENCE / EDUCATION */
+    .timeline-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.1rem 1.3rem; margin-bottom: .8rem;
+    }
+    .timeline-item h3 { font-size: .92rem; font-weight: 700; }
+    .timeline-sub { font-size: .8rem; color: var(--text-muted); margin-bottom: .4rem; }
+    .timeline-item p { font-size: .85rem; color: var(--text-muted); }
+
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .edu-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: .9rem 1.1rem;
+    }
+    .edu-card h4 { font-size: .85rem; font-weight: 600; margin-bottom: .15rem; }
+    .edu-card p { font-size: .78rem; color: var(--text-muted); }
+
+    /* CONTACT */
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem 1.5rem; text-align: center;
+    }
+    .contact-card p { color: var(--text-muted); font-size: .88rem; margin-bottom: .6rem; }
+    .contact-links { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: .35rem;
+      background: var(--accent); color: var(--bg); font-weight: 600;
+      padding: .5rem 1rem; border-radius: 8px; font-size: .85rem;
+      transition: opacity .2s;
+    }
+    .contact-btn:hover { opacity: .85; text-decoration: none; }
+    .contact-btn.secondary {
+      background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+    }
+
+    footer { text-align: center; padding: 2rem 0; font-size: .7rem; color: var(--text-muted); }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none; position: fixed; z-index: 200;
+      inset: 0; background: rgba(0,0,0,.85); cursor: pointer;
+    }
+    .modal-overlay img {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      max-width: 92%; max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+
+    @media (max-width: 700px) {
+      .hero { flex-direction: column; align-items: flex-start; padding-top: 2rem; }
+      .nav-links { display: none; }
+      .project-meta { grid-template-columns: 1fr; }
+      .project-gallery { grid-template-columns: repeat(2, 1fr); }
+      .edu-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="topbar">
-      <div class="brand">Juan F. Capitani</div>
-      <nav>
-        <a href="#about">About me</a>
-        <a href="#tech">Tech stack</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <div class="hero">
-    <div class="hero-img" style="background-image:url('img/profile.jpg');"></div>
-    <div class="hero-text">
-      <h1>Juan F. Capitani</h1>
-      <p style="margin:0;color:var(--muted);font-size:.95rem;">QA Engineer | Full Stack Web Dev | IT Management | 6 Languages</p>
-      <p class="hero-roles">
-        QA Engineering &mdash; Manual, API &amp; Automation Testing<br>
-        Web Dev &mdash; Angular / Node / React / Ruby / Python<br>
-        Network Admin &mdash; Windows &amp; Linux Server Management
-      </p>
-      <div class="hero-links">
-        <a href="mailto:morphineskynight@gmail.com">morphineskynight@gmail.com</a> &middot;
-        <a href="https://www.linkedin.com/in/juan-capitani-84366182/" target="_blank" rel="noreferrer">LinkedIn</a> &middot;
-        <a href="https://github.com/Morphined" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">JC</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#qa-projects">QA Projects</a>
+      <a href="#dev-projects">Dev &amp; Infra</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
+</nav>
 
-  <main>
-    <section id="about">
-      <h2>About me</h2>
-      <p>Technology professional with a rare mix of philosophy and engineering: 10+ years building, deploying and maintaining real products (web platforms, e-shops, CMS, ERPs) and now focused on QA, process improvement and automation. I care about things working in production, not just in theory.</p>
-      <p>As CTO at Lactolife I've managed web, SMTP and VPN servers, worked with Windows and Linux environments, deployed Docker-based solutions and maintained business-critical platforms. On the dev side I work with JavaScript, Python, Node.js, Angular and APIs, so collaborating with engineers and writing clear test cases/bug reports comes naturally.</p>
-      <p>What drives me is making systems reliable and human-friendly &mdash; documenting properly, testing before release, and leaving processes repeatable.</p>
-      <div class="chip-list">
-        <div class="chip">Writing test plans, user stories and use cases</div>
-        <div class="chip">Designing and executing functional and regression test cases</div>
-        <div class="chip">Defect reporting with severity/priority analysis in Jira</div>
-        <div class="chip">Testing techniques: equivalence partitioning, boundary value analysis, decision tables</div>
-        <div class="chip">API testing (Postman) and automation (Python + pytest + Selenium)</div>
-        <div class="chip">SQL &amp; NoSQL database handling</div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-photo"></div>
+  <div>
+    <h1>Juan F. Capitani</h1>
+    <p class="hero-sub">QA Engineer with technical depth in development, infrastructure and automation.</p>
+    <div class="hero-links">
+      <a href="mailto:morphineskynight@gmail.com">&#9993; morphineskynight@gmail.com</a>
+      <a href="https://www.linkedin.com/in/juan-capitani-84366182/" target="_blank">in LinkedIn</a>
+      <a href="https://github.com/Morphined" target="_blank">&lt;/&gt; GitHub</a>
+      <a href="https://drive.google.com/file/d/1xE3pc_BmvCu_gJ6u0-LYEH9g9kKRcF8p/view" target="_blank">&#128196; CV</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-title">About me</div>
+    <div class="about-card">
+      <p><strong>QA Engineer with 10+ years of hands-on technical experience.</strong> I test, document, automate and understand systems from an integral perspective &mdash; not just the happy path. My background as CTO and full-stack developer means I can read code, query databases, inspect APIs and collaborate with engineers at their level.</p>
+      <p>I specialize in <strong>manual testing</strong> (test design, equivalence partitioning, boundary values, regression), <strong>API testing</strong> (Postman, REST validation), and <strong>automation</strong> (Python + pytest + Selenium/POM). I've deployed and maintained real production infrastructure: Docker, Linux servers, ERPs, intranets.</p>
+      <p>Trilingual: <strong>Spanish</strong> (native), <strong>English</strong> (bilingual), <strong>Italian</strong> (native). Comfortable with distributed, international teams.</p>
+      <div class="tool-row">
+        <span class="tool-badge">Selenium</span>
+        <span class="tool-badge">pytest</span>
+        <span class="tool-badge">Postman</span>
+        <span class="tool-badge">Jira</span>
+        <span class="tool-badge">Python</span>
+        <span class="tool-badge green">DevTools</span>
+        <span class="tool-badge green">Git/GitHub</span>
+        <span class="tool-badge green">SQL</span>
+        <span class="tool-badge orange">Docker</span>
+        <span class="tool-badge orange">Linux</span>
+        <span class="tool-badge orange">Node.js</span>
+        <span class="tool-badge pink">Angular</span>
+        <span class="tool-badge pink">React</span>
+        <span class="tool-badge pink">REST APIs</span>
       </div>
-      <h3 style="margin-top:1rem;font-size:.95rem;">Languages</h3>
-      <div class="lang-list">
-        <span class="lang-tag">Spanish (Native)</span>
-        <span class="lang-tag">English (Bilingual)</span>
-        <span class="lang-tag">Italian (Native)</span>
-        <span class="lang-tag">Japanese (Working)</span>
-        <span class="lang-tag">Latin (Elementary)</span>
-        <span class="lang-tag">Ancient Greek (Elementary)</span>
+      <div class="lang-row" style="margin-top:.6rem;">
+        <span class="lang-tag">&#127466;&#127480; Spanish (Native)</span>
+        <span class="lang-tag">&#127468;&#127463; English (Bilingual)</span>
+        <span class="lang-tag">&#127470;&#127481; Italian (Native)</span>
+        <span class="lang-tag">&#127471;&#127477; Japanese (Working)</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="tech">
-      <h2>Tech Stack</h2>
-      <div class="tech-grid">
-        <div class="tech-item"><strong>QA Testing</strong> &mdash; Manual &amp; Automation: Selenium, Postman, pytest, Jira, DevTools. UI, API, mobile, cross-browser testing.</div>
-        <div class="tech-item"><strong>Programming</strong> &mdash; Python, JavaScript/TypeScript, Java, C++, Ruby. Backend scripting, test automation and problem solving.</div>
-        <div class="tech-item"><strong>Web Development</strong> &mdash; MEAN/MERN Stack: Node.js, Express, MongoDB, React, Angular. PHP, WordPress/Elementor.</div>
-        <div class="tech-item"><strong>Infrastructure</strong> &mdash; Linux/Windows server admin, Docker Compose, Nextcloud, Dolibarr ERP, VPN, SMTP, DNS, network management.</div>
-        <div class="tech-item"><strong>Databases</strong> &mdash; SQL (PostgreSQL, MySQL), NoSQL (MongoDB). Schema design, queries, data integrity.</div>
-        <div class="tech-item"><strong>Tools &amp; Platforms</strong> &mdash; Git/GitHub, PyCharm, VS Code, Cygwin/SSH, Azure AD, Microsoft 365.</div>
-      </div>
-    </section>
+  <!-- QA PROJECTS -->
+  <section class="section" id="qa-projects">
+    <div class="section-title">QA Projects</div>
+    <div class="projects-grid">
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-
-      <article class="project">
-        <h3>1. Manual Test Design &mdash; Ride-Sharing Web Application</h3>
-        <p>Structured QA project for a ride-sharing platform. I identified and documented equivalence classes and boundary values to reduce test cases while keeping full functional coverage. Created clear, reproducible test cases (inputs, steps, expected results, pass/fail) and built flowcharts and mind maps to describe application behavior and main user paths, improving communication and requirement traceability.</p>
-        <div class="project-tags">
-          <span class="project-tag">Manual Testing</span>
-          <span class="project-tag">Test Design</span>
-          <span class="project-tag">Equivalence Partitioning</span>
-          <span class="project-tag">Boundary Values</span>
-          <span class="project-tag">Flowcharts</span>
-        </div>
-        <div class="project-gallery">
-          <img src="img/urban-routes-eq-1.png" alt="Test design: equivalence classes">
-          <img src="img/urban-routes-eq-2.png" alt="Test cases with boundary values">
-          <img src="img/urban-routes-eq-3.png" alt="Mind map of user flows">
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>2. UI/UX Cross-Browser Testing &mdash; Ride-Sharing Application</h3>
-        <p>Quality assurance focused on validating the user interface and user experience of a transportation app. Designed manual test cases for visible features (reservation buttons, modal windows, field validations, cancellations) and for the UI/UX layer. Executed tests in multiple screen resolutions using Chrome and Firefox DevTools to verify responsive behavior. All issues logged in Jira with steps to reproduce, expected vs actual result, and visual evidence.</p>
-        <div class="project-tags">
-          <span class="project-tag">UI Testing</span>
-          <span class="project-tag">Cross-Browser</span>
-          <span class="project-tag">Responsive</span>
-          <span class="project-tag">Jira</span>
-          <span class="project-tag">DevTools</span>
-        </div>
-        <div class="project-gallery">
-          <img src="img/urban-routes-ui-1.png" alt="UI test: responsive validation">
-          <img src="img/urban-routes-ui-2.png" alt="Bug report in Jira">
-          <img src="img/urban-routes-ui-3.png" alt="Cross-browser comparison">
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>3. API Testing with Postman &mdash; Grocery Delivery Service</h3>
-        <p>Service testing focused on validating REST APIs for a delivery platform. Applied equivalence classes, functional testing and boundary testing to ensure APIs handled valid, invalid and missing data correctly. Verified status codes, response structure and error handling. All defects reported in Jira with clear reproduction steps and expected vs actual result.</p>
-        <div class="project-tags">
-          <span class="project-tag">API Testing</span>
-          <span class="project-tag">Postman</span>
-          <span class="project-tag">REST</span>
-          <span class="project-tag">Status Codes</span>
-          <span class="project-tag">Error Handling</span>
-        </div>
-        <div class="project-gallery">
-          <img src="img/urban-grocers-api-1.png" alt="API test collection in Postman">
-          <img src="img/urban-grocers-api-2.png" alt="Response validation">
-          <img src="img/urban-grocers-api-3.png" alt="Error handling test">
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>4. API Test Automation &mdash; Python + pytest</h3>
-        <p>Automated API test suite for a delivery service backend using Python and pytest. Designed 9 test functions covering positive and negative scenarios: valid names (1 char, 511 chars, special characters, spaces, numbers), boundary violations (empty, 512 chars), missing parameters and wrong data types. Used a clean architecture with separate modules for configuration, request handling, test data and assertions.</p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">pytest</span>
-          <span class="project-tag">API Automation</span>
-          <span class="project-tag">Boundary Testing</span>
-          <span class="project-tag">requests</span>
-        </div>
-        <div class="code-preview"><span class="cmt"># Positive &amp; negative assertions for kit name validation</span>
-<span class="kw">def</span> <span class="fn">positive_assert</span>(kit_body):
-    auth_token = <span class="fn">get_new_user_token</span>()
-    response = sender_stand_request.<span class="fn">post_new_client_kit</span>(kit_body, auth_token)
-    <span class="kw">assert</span> response.status_code == <span class="str">201</span>
-    <span class="kw">assert</span> response.json()[<span class="str">"name"</span>] == kit_body[<span class="str">"name"</span>]
-
-<span class="kw">def</span> <span class="fn">test_create_kit_name_special_chars_success</span>():
-    <span class="fn">positive_assert</span>(<span class="fn">get_kit_body</span>(<span class="str">"\"&#x2116;%@\","</span>))
-
-<span class="kw">def</span> <span class="fn">test_create_kit_name_512_chars_fail</span>():
-    <span class="fn">negative_assert_400</span>(<span class="fn">get_kit_body</span>(<span class="str">"a"</span> * <span class="str">512</span>))</div>
-        <div class="project-gallery">
-          <img src="img/api-automation-1.png" alt="pytest test results">
-          <img src="img/api-automation-2.png" alt="API test code structure">
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>5. Selenium UI Automation &mdash; Page Object Model (POM)</h3>
-        <p>End-to-end UI automation for a ride-sharing application using Selenium WebDriver and the Page Object Model pattern. Automated the full user flow: setting a route, selecting a fare, entering phone number with SMS verification, adding a credit card, writing a driver message, toggling extras (blanket, ice cream) and confirming a taxi order. Used explicit waits, JavaScript execution for tricky elements, and clean POM architecture for maintainability.</p>
-        <div class="project-tags">
-          <span class="project-tag">Selenium</span>
-          <span class="project-tag">Page Object Model</span>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">WebDriver</span>
-          <span class="project-tag">Explicit Waits</span>
-        </div>
-        <div class="code-preview"><span class="cmt"># Page Object with locators and actions</span>
+      <!-- P1: Selenium Automation -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Automation &middot; E2E</div>
+          <h3>Selenium UI Automation &mdash; Page Object Model</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Problem</span>Ride-sharing app needed full E2E regression coverage for the booking flow.</div>
+            <div class="meta-item"><span class="meta-label">My Role</span>Designed and coded the full automation suite from scratch.</div>
+            <div class="meta-item"><span class="meta-label">Tools</span>Python, Selenium WebDriver, POM, Explicit Waits, JS Execution</div>
+            <div class="meta-item"><span class="meta-label">Tests</span>E2E UI automation: route, fare, phone, credit card, extras, order confirmation</div>
+          </div>
+          <div class="project-evidence">
+            <div class="evidence-label">Evidence &amp; Deliverables</div>
+            <ul class="evidence-list">
+              <li>8 automated test functions covering the full user flow</li>
+              <li>Clean POM architecture with separate locators and methods</li>
+              <li>Explicit waits and JS execution for dynamic elements</li>
+            </ul>
+          </div>
+          <div class="code-block"><span class="cmt"># Page Object Model architecture</span>
 <span class="kw">class</span> <span class="fn">UrbanRoutesPage</span>:
     from_field = (By.ID, <span class="str">"from"</span>)
     to_field = (By.ID, <span class="str">"to"</span>)
-    comfort_btn = (By.XPATH, <span class="str">"//div[contains(@class,'tcard')]"</span>)
 
     <span class="kw">def</span> <span class="fn">set_route</span>(self, from_addr, to_addr):
-        from_el = self.wait.until(EC.<span class="fn">visibility_of_element_located</span>(self.from_field))
-        from_el.<span class="fn">send_keys</span>(from_addr)
-        to_el = self.wait.until(EC.<span class="fn">visibility_of_element_located</span>(self.to_field))
-        to_el.<span class="fn">send_keys</span>(to_addr)</div>
-        <div class="project-gallery">
-          <img src="img/selenium-pom-1.png" alt="Selenium test execution">
-          <img src="img/selenium-pom-2.png" alt="POM architecture">
+        el = self.wait.until(EC.<span class="fn">visibility_of_element_located</span>(self.from_field))
+        el.<span class="fn">send_keys</span>(from_addr)</div>
+          <div class="project-gallery cols-2">
+            <img src="img/selenium-pom-1.png" alt="Selenium test execution">
+            <img src="img/selenium-pom-2.png" alt="POM code structure">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge">Selenium</span>
+            <span class="tool-badge">Python</span>
+            <span class="tool-badge">POM</span>
+            <span class="tool-badge green">WebDriver</span>
+            <span class="tool-badge green">Explicit Waits</span>
+          </div>
         </div>
-      </article>
-
-      <article class="project">
-        <h3>6. Enterprise Tech Infrastructure &mdash; Lactolife (12+ Years)</h3>
-        <p>As CTO at Lactolife, I designed, deployed and maintain the company's full technology stack on Ubuntu servers using Docker Compose. This includes: a <strong>Nextcloud-based intranet</strong> with OnlyOffice, chat (Talk), GPS tracking, file management, calendar, and custom branding; a <strong>Dolibarr ERP/CRM</strong> handling purchase orders, invoicing, inventory, warehouses, POS, fleet management, HR and accounting; a <strong>WhatsApp chatbot</strong> (Node.js + Baileys) enabling customers to browse the catalog, place orders, submit complaints (PQR), and connect with a live advisor; and the <strong>corporate website + e-shop</strong> at <a href="https://lactolife.com" target="_blank" rel="noreferrer">lactolife.com</a>.</p>
-        <div class="project-tags">
-          <span class="project-tag">Docker Compose</span>
-          <span class="project-tag">Ubuntu Server</span>
-          <span class="project-tag">Nextcloud</span>
-          <span class="project-tag">Dolibarr ERP</span>
-          <span class="project-tag">Node.js</span>
-          <span class="project-tag">WhatsApp API</span>
-          <span class="project-tag">WordPress</span>
-        </div>
-        <div class="project-gallery">
-          <img src="img/nextcloud-intranet.png" alt="Nextcloud intranet dashboard">
-          <img src="img/dolibarr-erp.png" alt="Dolibarr ERP dashboard">
-          <img src="img/whatsapp-bot.png" alt="WhatsApp bot source code">
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>7. Software FJ &mdash; Client, Service &amp; Reservation Management System (Python OOP)</h3>
-        <p>Full object-oriented system built in Python for managing clients, services and reservations. Implements all four OOP pillars: abstract base classes (ABC), inheritance hierarchies for three service types (room reservations, equipment rental, specialized consulting), polymorphism through overridden cost calculation methods, and encapsulation with property-based validation. Features 15 custom exception classes organized in a hierarchy, with try/except/else/finally patterns and exception chaining. Includes a centralized logging system with file and console handlers. The simulation runs 15+ complete operations covering valid and invalid scenarios, demonstrating system stability under all error conditions. Developed collaboratively via <a href="https://github.com/Morphined/software_fj_213023_332" target="_blank" rel="noreferrer">GitHub</a>.</p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">OOP</span>
-          <span class="project-tag">Exception Handling</span>
-          <span class="project-tag">ABC</span>
-          <span class="project-tag">Logging</span>
-          <span class="project-tag">GitHub</span>
-        </div>
-        <div class="code-preview"><span class="cmt"># 15 custom exceptions + OOP architecture</span>
-<span class="kw">class</span> <span class="fn">SoftwareFJError</span>(Exception): ...
-<span class="kw">class</span> <span class="fn">DatosClienteInvalidosError</span>(<span class="fn">SoftwareFJError</span>): ...
-<span class="kw">class</span> <span class="fn">CapacidadExcedidaError</span>(<span class="fn">SoftwareFJError</span>): ...
-
-<span class="cmt"># Polymorphic cost calculation per service type</span>
-<span class="kw">class</span> <span class="fn">ReservaSala</span>(<span class="fn">Servicio</span>):
-    <span class="kw">def</span> <span class="fn">calcular_costo</span>(self, horas, extras):
-        <span class="kw">return</span> self._tarifa * horas + sum(extras)</div>
-        <div class="project-gallery">
-          <img src="img/software-fj.png" alt="Software FJ: Python OOP system with simulation output">
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>8. Virtual Store &amp; Bicycle Workshop &mdash; Python GUI Applications (Tkinter)</h3>
-        <p>Two standalone desktop applications built with Python and Tkinter. The <strong>Virtual Store</strong> implements a full e-commerce system with product inheritance (Electronics, Clothing, Food), polymorphic discount calculation (percentage, coupon, premium customer), and a shopping cart that traverses products polymorphically. The <strong>Bicycle Workshop Control System</strong> manages bicycle entries/exits with a login screen, OOP data model, and a complete Tkinter GUI for workshop management. Both projects demonstrate practical OOP design, GUI development, and clean code architecture.</p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Tkinter</span>
-          <span class="project-tag">OOP</span>
-          <span class="project-tag">Inheritance</span>
-          <span class="project-tag">Polymorphism</span>
-          <span class="project-tag">GUI</span>
-        </div>
-        <div class="code-preview"><span class="cmt"># Virtual Store: polymorphic discount system</span>
-<span class="kw">class</span> <span class="fn">Producto</span>:
-    <span class="kw">def</span> <span class="fn">calcular_descuento</span>(self, porcentaje=<span class="str">0</span>, cupon=<span class="str">None</span>): ...
-
-<span class="kw">class</span> <span class="fn">Electronico</span>(<span class="fn">Producto</span>):  <span class="cmt"># warranty-based pricing</span>
-<span class="kw">class</span> <span class="fn">Ropa</span>(<span class="fn">Producto</span>):         <span class="cmt"># seasonal discounts</span>
-<span class="kw">class</span> <span class="fn">Alimento</span>(<span class="fn">Producto</span>):     <span class="cmt"># expiry-aware pricing</span></div>
-      </article>
-
-      <article class="project">
-        <h3>9. Hospital Network Design &mdash; Cisco Packet Tracer (IPv4/IPv6)</h3>
-        <p>Designed and simulated a complete hospital network infrastructure using Cisco Packet Tracer. The topology includes dual-stack IPv4/IPv6 addressing, multiple VLANs, web and mail servers, wireless access points, medical workstations, laptops, and IoT devices. Configured routing between subnets, verified full connectivity via ping tests across all IPv6 subnets, and documented the architecture for a real-world healthcare scenario with segmented traffic for medical, administrative, and guest networks.</p>
-        <div class="project-tags">
-          <span class="project-tag">Cisco Packet Tracer</span>
-          <span class="project-tag">IPv4/IPv6</span>
-          <span class="project-tag">VLANs</span>
-          <span class="project-tag">Network Design</span>
-          <span class="project-tag">Routing</span>
-          <span class="project-tag">IoT</span>
-        </div>
-        <div class="project-gallery">
-          <img src="img/network-topology.png" alt="Hospital network topology in Cisco Packet Tracer">
-          <img src="img/network-ping.png" alt="IPv6 connectivity verification">
-        </div>
-      </article>
-
-      <article class="project">
-        <h3>10. Database Design &mdash; Logistics Company (Oracle SQL / 3NF)</h3>
-        <p>Designed a complete relational database for TransNacional Express S.A.S., a national cargo transportation company. Built the full design lifecycle: conceptual model (Entity-Relationship diagram with cardinalities), logical model in Oracle SQL Developer Data Modeler, and physical DDL script in Oracle SQL. The schema includes 10 tables covering clients (natural persons and companies via specialization), packages, branches, employees, vehicles, shipments and deliveries. Normalized to Third Normal Form (3NF) with proper primary keys, foreign keys, CHECK constraints, UNIQUE constraints and resolved N:M relationships through junction tables.</p>
-        <div class="project-tags">
-          <span class="project-tag">Oracle SQL</span>
-          <span class="project-tag">Database Design</span>
-          <span class="project-tag">3NF Normalization</span>
-          <span class="project-tag">ER Diagrams</span>
-          <span class="project-tag">SQL Developer Data Modeler</span>
-          <span class="project-tag">DDL</span>
-        </div>
-        <div class="code-preview"><span class="cmt">-- DDL: constraints, FKs, CHECK validation</span>
-<span class="kw">CREATE TABLE</span> <span class="fn">CLIENTE</span> (
-    id_cliente   <span class="str">NUMBER(10)</span>    <span class="kw">NOT NULL</span>,
-    tipo_cliente <span class="str">VARCHAR2(20)</span>  <span class="kw">NOT NULL</span>,
-    <span class="kw">CONSTRAINT</span> pk_cliente <span class="kw">PRIMARY KEY</span> (id_cliente),
-    <span class="kw">CONSTRAINT</span> ck_tipo <span class="kw">CHECK</span> (tipo_cliente <span class="kw">IN</span> (<span class="str">'Persona Natural'</span>, <span class="str">'Empresa'</span>))
-);
-
-<span class="kw">CREATE TABLE</span> <span class="fn">ENTREGA</span> (  <span class="cmt">-- N:M resolved junction table</span>
-    cedula_emp  <span class="str">NUMBER(12)</span>, id_sucursal <span class="str">NUMBER(10)</span>, num_guia <span class="str">VARCHAR2(20)</span>,
-    <span class="kw">CONSTRAINT</span> pk_entrega <span class="kw">PRIMARY KEY</span> (cedula_emp, id_sucursal, num_guia)
-);</div>
-        <div class="project-gallery">
-          <img src="img/db-er-diagram.png" alt="Entity-Relationship diagram for TransNacional Express">
-          <img src="img/db-logical-model.png" alt="Logical model in Oracle SQL Developer">
-          <img src="img/db-relational-model.png" alt="Relational model with data types and constraints">
-        </div>
-      </article>
-    </section>
-
-    <section id="experience">
-      <h2>Professional Experience</h2>
-      <div style="margin-bottom:1rem;">
-        <h3 style="margin-bottom:.2rem;font-size:1rem;">Chief Technology Officer &mdash; Lactolife</h3>
-        <p style="margin:0;color:var(--muted);font-size:.85rem;">January 2014 &ndash; Present &middot; Tocancip&aacute;, Colombia</p>
-        <p style="margin-top:.4rem;">Computer network deployment, management and maintenance. Intranet development (Nextcloud). CRM/ERP implementation (Dolibarr, SugarCRM). Technology asset management and hardware repairs. SQL database management. Web development (Ruby on Rails, PHP, Angular, React). Microsoft EMS &amp; Azure AD administration. Social responsibility programs. Recruiting and training.</p>
       </div>
-      <div>
-        <h3 style="margin-bottom:.2rem;font-size:1rem;">English Teacher &mdash; Bibo Global Opportunity</h3>
-        <p style="margin:0;color:var(--muted);font-size:.85rem;">January 2019 &ndash; July 2019 &middot; Bogot&aacute;, Colombia</p>
+
+      <!-- P2: API Automation pytest -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Automation &middot; API</div>
+          <h3>API Test Automation &mdash; Python + pytest</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Problem</span>Delivery service API needed automated validation for kit creation endpoint.</div>
+            <div class="meta-item"><span class="meta-label">My Role</span>Built automated test suite with 9 test functions covering all boundary scenarios.</div>
+            <div class="meta-item"><span class="meta-label">Tools</span>Python, pytest, requests library, modular architecture</div>
+            <div class="meta-item"><span class="meta-label">Tests</span>Positive/negative: 1 char, 511 chars, special chars, empty, 512 chars, wrong types</div>
+          </div>
+          <div class="project-evidence">
+            <div class="evidence-label">Evidence &amp; Deliverables</div>
+            <ul class="evidence-list">
+              <li>9 automated tests with clear positive/negative assertion functions</li>
+              <li>Separate modules: configuration, data, requests, tests</li>
+              <li>Full boundary value analysis applied to API input validation</li>
+            </ul>
+          </div>
+          <div class="code-block"><span class="kw">def</span> <span class="fn">positive_assert</span>(kit_body):
+    auth_token = <span class="fn">get_new_user_token</span>()
+    resp = sender.<span class="fn">post_new_client_kit</span>(kit_body, auth_token)
+    <span class="kw">assert</span> resp.status_code == <span class="str">201</span>
+
+<span class="kw">def</span> <span class="fn">test_create_kit_512_chars_fail</span>():
+    <span class="fn">negative_assert_400</span>(<span class="fn">get_kit_body</span>(<span class="str">"a"</span> * <span class="str">512</span>))</div>
+          <div class="project-gallery cols-2">
+            <img src="img/api-automation-1.png" alt="pytest results">
+            <img src="img/api-automation-2.png" alt="Test code">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge">pytest</span>
+            <span class="tool-badge">Python</span>
+            <span class="tool-badge">requests</span>
+            <span class="tool-badge green">Boundary Testing</span>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <div class="tech-grid">
-        <div class="tech-item"><strong>UNAD &ndash; Universidad Nacional Abierta y a Distancia</strong> &mdash; Systems Engineering (In progress, 2025&ndash;present)</div>
-        <div class="tech-item"><strong>Pontificia Universidad Javeriana</strong> &mdash; Bachelor of Philosophy, Humanities (2014&ndash;2020)</div>
-        <div class="tech-item"><strong>BIT &ndash; Bogot&aacute; Institute of Technology</strong> &mdash; Full Stack Web Developer (2022)</div>
-        <div class="tech-item"><strong>Berklee College of Music</strong> &mdash; Music Technology (2020)</div>
-        <div class="tech-item"><strong>Universit&agrave; di Roma Tor Vergata</strong> &mdash; Engineering Sciences (2013&ndash;2014)</div>
+      <!-- P3: API Testing Postman -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Manual &middot; API</div>
+          <h3>API Testing with Postman &mdash; Grocery Delivery Service</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Problem</span>REST APIs for a delivery platform needed validation for data handling and error responses.</div>
+            <div class="meta-item"><span class="meta-label">My Role</span>Designed and executed API test cases, documented all defects in Jira.</div>
+            <div class="meta-item"><span class="meta-label">Tools</span>Postman, Jira, Chrome DevTools, REST API documentation</div>
+            <div class="meta-item"><span class="meta-label">Tests</span>Functional, boundary, equivalence partitioning, error handling, status code validation</div>
+          </div>
+          <div class="project-evidence">
+            <div class="evidence-label">Evidence &amp; Deliverables</div>
+            <ul class="evidence-list">
+              <li>Postman collection with organized requests per endpoint</li>
+              <li>Defect reports in Jira with steps, expected/actual, severity</li>
+              <li>Validated status codes: 200, 201, 400, 404, 409</li>
+            </ul>
+          </div>
+          <div class="project-gallery">
+            <img src="img/urban-grocers-api-1.png" alt="Postman collection">
+            <img src="img/urban-grocers-api-2.png" alt="Response validation">
+            <img src="img/urban-grocers-api-3.png" alt="Error handling">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge">Postman</span>
+            <span class="tool-badge">REST</span>
+            <span class="tool-badge">Jira</span>
+            <span class="tool-badge green">Status Codes</span>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section id="cv">
-      <h2>Professional CV</h2>
-      <p>Download or view my full CV: <a href="https://drive.google.com/file/d/1xE3pc_BmvCu_gJ6u0-LYEH9g9kKRcF8p/view?usp=sharing" style="color:var(--accent);text-decoration:none;" target="_blank" rel="noreferrer">Open CV (Google Drive)</a></p>
-    </section>
+      <!-- P4: Manual Test Design -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Manual &middot; Test Design</div>
+          <h3>Manual Test Design &mdash; Ride-Sharing Application</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Problem</span>Needed structured test coverage for the core booking flow with minimal redundancy.</div>
+            <div class="meta-item"><span class="meta-label">My Role</span>Identified equivalence classes, designed test cases, built flowcharts and mind maps.</div>
+            <div class="meta-item"><span class="meta-label">Tools</span>Spreadsheets, draw.io, Jira, test case templates</div>
+            <div class="meta-item"><span class="meta-label">Tests</span>Equivalence partitioning, boundary values, decision tables, flowcharts</div>
+          </div>
+          <div class="project-evidence">
+            <div class="evidence-label">Evidence &amp; Deliverables</div>
+            <ul class="evidence-list">
+              <li>Complete test case matrix with inputs, steps, expected results, pass/fail</li>
+              <li>Flowcharts mapping user paths and decision points</li>
+              <li>Mind maps for requirement traceability</li>
+            </ul>
+          </div>
+          <div class="project-gallery">
+            <img src="img/urban-routes-eq-1.png" alt="Equivalence classes">
+            <img src="img/urban-routes-eq-2.png" alt="Boundary values">
+            <img src="img/urban-routes-eq-3.png" alt="Mind maps">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge">Test Design</span>
+            <span class="tool-badge">Equivalence Partitioning</span>
+            <span class="tool-badge green">Boundary Values</span>
+            <span class="tool-badge green">Flowcharts</span>
+          </div>
+        </div>
+      </div>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Thank you for visiting my portfolio. I'm actively looking for remote opportunities as QA Manual, Junior QA Automation or hybrid roles where I can contribute with detailed analysis, critical thinking and continuous quality improvement.</p>
-      <p>Email: <a href="mailto:morphineskynight@gmail.com">morphineskynight@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/juan-capitani-84366182/" target="_blank" rel="noreferrer">linkedin.com/in/juan-capitani-84366182/</a></p>
-      <p>GitHub: <a href="https://github.com/Morphined" target="_blank" rel="noreferrer">github.com/Morphined</a></p>
-    </section>
-  </main>
+      <!-- P5: UI/UX Cross-Browser -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Manual &middot; UI/UX</div>
+          <h3>UI/UX Cross-Browser Testing &mdash; Transportation App</h3>
+          <div class="project-meta">
+            <div class="meta-item"><span class="meta-label">Problem</span>App UI needed validation across browsers and screen sizes before release.</div>
+            <div class="meta-item"><span class="meta-label">My Role</span>Executed cross-browser tests, documented responsive issues in Jira with evidence.</div>
+            <div class="meta-item"><span class="meta-label">Tools</span>Chrome/Firefox DevTools, Jira, screen capture tools</div>
+            <div class="meta-item"><span class="meta-label">Tests</span>Responsive testing, cross-browser comparison, UI element validation</div>
+          </div>
+          <div class="project-evidence">
+            <div class="evidence-label">Evidence &amp; Deliverables</div>
+            <ul class="evidence-list">
+              <li>Bug reports with steps to reproduce and visual comparisons</li>
+              <li>Multi-resolution testing in Chrome and Firefox</li>
+              <li>Expected vs actual screenshots for every defect</li>
+            </ul>
+          </div>
+          <div class="project-gallery">
+            <img src="img/urban-routes-ui-1.png" alt="Responsive testing">
+            <img src="img/urban-routes-ui-2.png" alt="Bug report Jira">
+            <img src="img/urban-routes-ui-3.png" alt="Cross-browser">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge">UI Testing</span>
+            <span class="tool-badge">Cross-Browser</span>
+            <span class="tool-badge green">DevTools</span>
+            <span class="tool-badge green">Jira</span>
+          </div>
+        </div>
+      </div>
 
-  <footer>&copy; 2026 Juan F. Capitani &mdash; QA Engineering &amp; Web Development Portfolio</footer>
+    </div>
+  </section>
 
-  <div id="imgModal" class="img-modal">
-    <span class="img-modal-close" id="imgModalClose">&times;</span>
-    <img class="img-modal-content" id="imgModalContent" alt="">
-  </div>
-  <script>
-    const modal=document.getElementById('imgModal'),modalImg=document.getElementById('imgModalContent'),closeBtn=document.getElementById('imgModalClose');
-    document.querySelectorAll('.project-gallery img').forEach(img=>{img.addEventListener('click',()=>{modal.style.display='block';modalImg.src=img.src;modalImg.alt=img.alt||'';});});
-    closeBtn.addEventListener('click',()=>{modal.style.display='none';});
-    modal.addEventListener('click',e=>{if(e.target===modal)modal.style.display='none';});
-  </script>
+  <!-- DEV & INFRA PROJECTS -->
+  <section class="section" id="dev-projects">
+    <div class="section-title">Development &amp; Infrastructure</div>
+    <div class="projects-grid">
+
+      <!-- Lactolife -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Infrastructure &middot; 12+ Years</div>
+          <h3>Enterprise Tech Stack &mdash; Lactolife</h3>
+          <p class="project-desc">Designed, deployed and maintain Lactolife's full technology infrastructure on Ubuntu servers with Docker Compose: <strong>Nextcloud intranet</strong> (OnlyOffice, Talk, GPS, calendar), <strong>Dolibarr ERP/CRM</strong> (POs, invoicing, inventory, POS, HR, fleet), <strong>WhatsApp chatbot</strong> (Node.js/Baileys for orders, PQR, catalog), and <strong>corporate website + e-shop</strong>.</p>
+          <div class="project-gallery">
+            <img src="img/nextcloud-intranet.png" alt="Nextcloud intranet">
+            <img src="img/dolibarr-erp.png" alt="Dolibarr ERP">
+            <img src="img/whatsapp-bot.png" alt="WhatsApp bot code">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge orange">Docker</span>
+            <span class="tool-badge orange">Ubuntu</span>
+            <span class="tool-badge orange">Nextcloud</span>
+            <span class="tool-badge orange">Dolibarr</span>
+            <span class="tool-badge">Node.js</span>
+            <span class="tool-badge pink">WordPress</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Software FJ -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Python &middot; OOP</div>
+          <h3>Software FJ &mdash; Client &amp; Reservation Management System</h3>
+          <p class="project-desc">Full OOP system in Python: abstract base classes, inheritance for 3 service types, polymorphic cost calculation, 15 custom exception classes in a hierarchy, try/except/else/finally patterns, exception chaining, and centralized logging. Runs 15+ simulation operations covering valid and invalid scenarios.</p>
+          <div class="project-gallery cols-1">
+            <img src="img/software-fj.png" alt="Software FJ simulation">
+          </div>
+          <div class="project-links"><a href="https://github.com/Morphined/software_fj_213023_332" target="_blank">&lt;/&gt; View on GitHub</a></div>
+          <div class="tool-row" style="margin-top:.5rem;">
+            <span class="tool-badge">Python</span>
+            <span class="tool-badge">OOP</span>
+            <span class="tool-badge green">Exception Handling</span>
+            <span class="tool-badge green">Logging</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database Design -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Database &middot; SQL</div>
+          <h3>Database Design &mdash; Logistics Company (Oracle SQL / 3NF)</h3>
+          <p class="project-desc">Complete relational database for a cargo transportation company: ER diagram, logical model in Oracle SQL Developer Data Modeler, and DDL script with 10 tables normalized to 3NF. Includes PKs, FKs, CHECK constraints, UNIQUE constraints, and resolved N:M relationships via junction tables.</p>
+          <div class="project-gallery">
+            <img src="img/db-er-diagram.png" alt="ER diagram">
+            <img src="img/db-logical-model.png" alt="Logical model">
+            <img src="img/db-relational-model.png" alt="Relational model">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge">Oracle SQL</span>
+            <span class="tool-badge">3NF</span>
+            <span class="tool-badge green">ER Diagrams</span>
+            <span class="tool-badge green">DDL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Network -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Networking &middot; Cisco</div>
+          <h3>Hospital Network Design &mdash; Cisco Packet Tracer</h3>
+          <p class="project-desc">Complete hospital network: dual-stack IPv4/IPv6, VLANs, web and mail servers, wireless APs, medical workstations, IoT devices. Configured routing, verified full connectivity across all subnets.</p>
+          <div class="project-gallery cols-2">
+            <img src="img/network-topology.png" alt="Network topology">
+            <img src="img/network-ping.png" alt="IPv6 ping tests">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge orange">Cisco Packet Tracer</span>
+            <span class="tool-badge orange">IPv4/IPv6</span>
+            <span class="tool-badge">VLANs</span>
+            <span class="tool-badge">Routing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tkinter Apps -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Python &middot; GUI</div>
+          <h3>Virtual Store &amp; Bicycle Workshop &mdash; Desktop Apps</h3>
+          <p class="project-desc">Two Tkinter applications: an e-commerce system with product inheritance and polymorphic discounts, and a bicycle workshop management system with login, OOP data model, and full GUI.</p>
+          <div class="tool-row" style="margin-top:.5rem;">
+            <span class="tool-badge">Python</span>
+            <span class="tool-badge">Tkinter</span>
+            <span class="tool-badge green">OOP</span>
+            <span class="tool-badge green">Inheritance</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-title">Experience</div>
+    <div class="timeline-item">
+      <h3>Chief Technology Officer &mdash; Lactolife</h3>
+      <div class="timeline-sub">Jan 2014 &ndash; Present &middot; Tocancip&aacute;, Colombia</div>
+      <p>Network deployment and management. Intranet (Nextcloud) and ERP/CRM (Dolibarr) implementation via Docker Compose. WhatsApp chatbot development. SQL database management. Web development (Ruby on Rails, PHP, Angular, React). Azure AD administration. Recruiting and training.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>English Teacher &mdash; Bibo Global Opportunity</h3>
+      <div class="timeline-sub">Jan 2019 &ndash; Jul 2019 &middot; Bogot&aacute;, Colombia</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-title">Education</div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h4>QA Engineering Certificate</h4>
+        <p>TripleTen, 2025&ndash;2026</p>
+      </div>
+      <div class="edu-card">
+        <h4>Systems Engineering (In progress)</h4>
+        <p>UNAD, 2025&ndash;present</p>
+      </div>
+      <div class="edu-card">
+        <h4>Bachelor of Philosophy</h4>
+        <p>Pontificia Universidad Javeriana, 2014&ndash;2020</p>
+      </div>
+      <div class="edu-card">
+        <h4>Full Stack Web Developer</h4>
+        <p>BIT &ndash; Bogot&aacute; Institute of Technology, 2022</p>
+      </div>
+      <div class="edu-card">
+        <h4>Music Technology</h4>
+        <p>Berklee College of Music, 2020</p>
+      </div>
+      <div class="edu-card">
+        <h4>Engineering Sciences</h4>
+        <p>Universit&agrave; di Roma Tor Vergata, 2013&ndash;2014</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-title">Get in touch</div>
+    <div class="contact-card">
+      <p>Looking for remote opportunities as QA Engineer, QA Automation or hybrid QA/Dev roles.<br>Let's talk.</p>
+      <div class="contact-links">
+        <a class="contact-btn" href="mailto:morphineskynight@gmail.com">&#9993; Email me</a>
+        <a class="contact-btn secondary" href="https://www.linkedin.com/in/juan-capitani-84366182/" target="_blank">LinkedIn</a>
+        <a class="contact-btn secondary" href="https://github.com/Morphined" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>&copy; 2026 Juan F. Capitani</footer>
+
+<!-- Image Modal -->
+<div class="modal-overlay" id="modal">
+  <img id="modalImg" src="" alt="">
+</div>
+<script>
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modalImg');
+  document.querySelectorAll('.project-gallery img').forEach(img => {
+    img.addEventListener('click', () => { modalImg.src = img.src; modal.style.display = 'block'; });
+  });
+  modal.addEventListener('click', () => { modal.style.display = 'none'; });
+</script>
+
 </body>
 </html>
