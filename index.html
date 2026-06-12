@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Juan F. Capitani | QA Engineer Portfolio</title>
+  <title>Juan F. Capitani | QA & Software Engineer Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -108,6 +108,18 @@
       padding: .2rem .55rem; border-radius: 6px; font-size: .78rem;
       border: 1px solid var(--border);
     }
+
+
+
+    /* ROLE CARDS */
+    .roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+    .role-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.1rem;
+    }
+    .role-card h3 { font-size: .88rem; margin-bottom: .35rem; }
+    .role-card p { color: var(--text-muted); font-size: .8rem; line-height: 1.55; }
+    @media (max-width: 850px) { .roles-grid { grid-template-columns: 1fr; } }
 
     /* PROJECT CARDS */
     .projects-grid { display: grid; gap: 1.2rem; }
@@ -237,6 +249,7 @@
     <span class="nav-brand">JC</span>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#roles">Roles</a>
       <a href="#qa-projects">QA Projects</a>
       <a href="#dev-projects">Dev &amp; Infra</a>
       <a href="#experience">Experience</a>
@@ -251,13 +264,13 @@
   <div class="hero-photo"></div>
   <div>
     <h1>Juan F. Capitani</h1>
-    <p class="hero-sub">QA Engineer with technical depth in development, infrastructure and automation.</p>
+    <p class="hero-sub">Computer Engineer focused on QA Automation, Software Development, Systems Administration, Networking and Databases.</p>
     <div class="hero-links">
-      <a href="mailto:morphineskynight@gmail.com">&#9993; morphineskynight@gmail.com</a>
+      <a href="mailto:juancapitanig@gmail.com">&#9993; juancapitanig@gmail.com</a>
       <a href="https://www.linkedin.com/in/juan-capitani-84366182/" target="_blank">in LinkedIn</a>
       <a href="https://github.com/Morphined" target="_blank">&lt;/&gt; GitHub</a>
-      <a href="https://drive.google.com/file/d/1lxfxBamHH2yeS1vSDagwLH4bLat-J8sA/view?usp=sharing" target="_blank">&#128196; CV (ES)</a>
-      <a href="https://drive.google.com/file/d/1nqwqIKHViNLJ11ipJ1UWHnT2HbvYuf_h/view?usp=sharing" target="_blank">&#128196; CV (EN)</a>
+      <a href="cv/Juan_Capitani_CV_ES.pdf" target="_blank">&#128196; CV (ES)</a>
+      <a href="cv/Juan_Capitani_CV_EN.pdf" target="_blank">&#128196; CV (EN)</a>
     </div>
   </div>
 </div>
@@ -268,8 +281,9 @@
   <section class="section" id="about">
     <div class="section-title">About me</div>
     <div class="about-card">
-      <p><strong>QA Engineer with 10+ years of hands-on technical experience.</strong> I test, document, automate and understand systems from an integral perspective &mdash; not just the happy path. My background as CTO and full-stack developer means I can read code, query databases, inspect APIs and collaborate with engineers at their level.</p>
-      <p>I specialize in <strong>manual testing</strong> (test design, equivalence partitioning, boundary values, regression), <strong>API testing</strong> (Postman, REST validation), and <strong>automation</strong> (Python + pytest + Selenium/POM). I've deployed and maintained real production infrastructure: Docker, Linux servers, ERPs, intranets.</p>
+      <p><strong>Computer Engineer with hands-on experience across QA, software development, infrastructure, networking and databases.</strong> I work comfortably across the full technical lifecycle: designing and testing features, reading and debugging code, validating APIs, querying databases, deploying services, maintaining servers and troubleshooting production systems.</p>
+      <p>My current career focus is <strong>QA Engineering / QA Automation</strong>, supported by a broader engineering background that lets me understand applications beyond the user interface. I bring experience in <strong>manual testing</strong>, <strong>API testing</strong>, <strong>Python automation</strong>, <strong>full stack development</strong>, <strong>Linux/Windows system administration</strong>, <strong>Docker-based deployments</strong>, <strong>network services</strong>, <strong>SQL/database design</strong> and <strong>IT maintenance/support</strong>.</p>
+      <p>This hybrid background helps me collaborate with developers, reproduce defects with technical evidence, inspect logs and data, identify likely root causes and communicate clearly with both technical and non-technical teams.</p>
       <p>Trilingual: <strong>Spanish</strong> (native), <strong>English</strong> (bilingual), <strong>Italian</strong> (native). Comfortable with distributed, international teams.</p>
       <div class="tool-row">
         <span class="tool-badge">Selenium</span>
@@ -292,6 +306,39 @@
         <span class="lang-tag">&#127468;&#127463; English (Bilingual)</span>
         <span class="lang-tag">&#127470;&#127481; Italian (Native)</span>
         <span class="lang-tag">&#127471;&#127477; Japanese (Working)</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ROLE FOCUS -->
+  <section class="section" id="roles">
+    <div class="section-title">Role Focus</div>
+    <div class="roles-grid">
+      <div class="role-card">
+        <h3>QA Engineer / QA Automation</h3>
+        <p>Manual test design, API testing, Selenium/POM automation, pytest, regression checks, defect documentation and pre-deployment verification.</p>
+      </div>
+      <div class="role-card">
+        <h3>Software Developer</h3>
+        <p>Full stack and internal tooling with JavaScript, Node.js, Angular, React, Ruby on Rails, PHP, WordPress and Python.</p>
+      </div>
+      <div class="role-card">
+        <h3>Systems Administrator</h3>
+        <p>Linux/Windows servers, Docker Compose, Nextcloud, Dolibarr ERP/CRM, backups, mail services, remote access and operational troubleshooting.</p>
+      </div>
+      <div class="role-card">
+        <h3>Network Administrator</h3>
+        <p>VPN, DNS, SMTP, Azure AD, remote access, workstation support, network troubleshooting and connectivity verification.</p>
+      </div>
+      <div class="role-card">
+        <h3>Database Administrator / Data Modeler</h3>
+        <p>SQL queries, backups, data cleanup, relational modeling, ER diagrams, normalization, PK/FK constraints and information integrity support.</p>
+      </div>
+      <div class="role-card">
+        <h3>IT Maintenance & Support Engineer</h3>
+        <p>Hardware/software diagnosis, plant equipment support, user support, vendor coordination, documentation and issue resolution with evidence.</p>
       </div>
     </div>
   </section>
@@ -489,24 +536,83 @@
     <div class="section-title">Development &amp; Infrastructure</div>
     <div class="projects-grid">
 
-      <!-- Lactolife -->
+      <!-- Lactolife eShop -->
       <div class="project-card">
         <div class="project-body">
-          <div class="project-label">Infrastructure &middot; 12+ Years</div>
-          <h3>Enterprise Tech Stack &mdash; Lactolife</h3>
-          <p class="project-desc">Designed, deployed and maintain Lactolife's full technology infrastructure on Ubuntu servers with Docker Compose: <strong>Nextcloud intranet</strong> (OnlyOffice, Talk, GPS, calendar), <strong>Dolibarr ERP/CRM</strong> (POs, invoicing, inventory, POS, HR, fleet), <strong>WhatsApp chatbot</strong> (Node.js/Baileys for orders, PQR, catalog), and <strong>corporate website + e-shop</strong>.</p>
+          <div class="project-label">E-commerce &middot; Full Stack</div>
+          <h3>Lactolife eShop &mdash; Online Store Platform</h3>
+          <p class="project-desc">Designed and built Lactolife&apos;s online store with searchable catalog, category navigation, product cards, account area, side-cart summary and shipping/checkout flow. The project combines a static frontend with a Medusa backend and PostgreSQL, giving me hands-on experience across UI, store logic and deployment structure.</p>
           <div class="project-gallery">
-            <img src="img/nextcloud-intranet.png" alt="Nextcloud intranet">
-            <img src="img/dolibarr-erp.png" alt="Dolibarr ERP">
+            <img src="img/eshop-home.png" alt="Lactolife eShop homepage">
+            <img src="img/eshop-category.png" alt="Lactolife eShop category page">
+            <img src="img/eshop-cart.png" alt="Lactolife eShop cart drawer">
+          </div>
+          <div class="project-links"><a href="https://github.com/Morphined/eShopLacto" target="_blank">&lt;/&gt; View on GitHub</a></div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge">HTML</span>
+            <span class="tool-badge pink">CSS</span>
+            <span class="tool-badge">JavaScript</span>
+            <span class="tool-badge">TypeScript</span>
+            <span class="tool-badge green">Node.js</span>
+            <span class="tool-badge green">Medusa</span>
+            <span class="tool-badge green">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nextcloud -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Infrastructure &middot; Collaboration</div>
+          <h3>Nextcloud Intranet &mdash; Collaboration Platform</h3>
+          <p class="project-desc">Deployed and maintained a company intranet on Ubuntu with Docker Compose, including file management, internal chat, calendar, GPS modules and productivity tooling. This project reflects systems administration, container orchestration, user support and platform troubleshooting in a real business environment.</p>
+          <div class="project-gallery cols-1">
+            <img src="img/nextcloud-intranet.png" alt="Nextcloud intranet dashboard">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge orange">Docker Compose</span>
+            <span class="tool-badge orange">Ubuntu</span>
+            <span class="tool-badge orange">Nextcloud</span>
+            <span class="tool-badge green">OnlyOffice</span>
+            <span class="tool-badge green">Systems Administration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dolibarr -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">ERP/CRM &middot; Business Operations</div>
+          <h3>Dolibarr ERP/CRM &mdash; Operations Platform</h3>
+          <p class="project-desc">Implemented and supported Dolibarr as an operational platform for purchase orders, invoicing, inventory, warehouses, POS, fleet, HR and accounting workflows. The work involved deployment, configuration, business-process mapping and ongoing technical support.</p>
+          <div class="project-gallery cols-1">
+            <img src="img/dolibarr-erp.png" alt="Dolibarr ERP interface">
+          </div>
+          <div class="tool-row" style="margin-top:.6rem;">
+            <span class="tool-badge orange">Dolibarr</span>
+            <span class="tool-badge orange">ERP/CRM</span>
+            <span class="tool-badge">Docker</span>
+            <span class="tool-badge green">Operations</span>
+            <span class="tool-badge green">Support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WhatsApp Bot -->
+      <div class="project-card">
+        <div class="project-body">
+          <div class="project-label">Automation &middot; Node.js</div>
+          <h3>WhatsApp Sales Bot &mdash; Orders, Catalog &amp; Support</h3>
+          <p class="project-desc">Built and maintained a WhatsApp bot for catalog browsing, order guidance, PQR flows and live-advisor routing. This project strengthened my experience with Node.js, process automation, customer-facing logic and integration of digital channels into business operations.</p>
+          <div class="project-gallery cols-1">
             <img src="img/whatsapp-bot.png" alt="WhatsApp bot code">
           </div>
           <div class="tool-row" style="margin-top:.6rem;">
-            <span class="tool-badge orange">Docker</span>
-            <span class="tool-badge orange">Ubuntu</span>
-            <span class="tool-badge orange">Nextcloud</span>
-            <span class="tool-badge orange">Dolibarr</span>
             <span class="tool-badge">Node.js</span>
-            <span class="tool-badge pink">WordPress</span>
+            <span class="tool-badge">JavaScript</span>
+            <span class="tool-badge green">Automation</span>
+            <span class="tool-badge green">Chatbot</span>
+            <span class="tool-badge green">Customer Support</span>
           </div>
         </div>
       </div>
@@ -608,9 +714,9 @@
   <section class="section" id="experience">
     <div class="section-title">Experience</div>
     <div class="timeline-item">
-      <h3>Chief Technology Officer &mdash; Lactolife</h3>
+      <h3>Computer Engineer &mdash; Lactolife</h3>
       <div class="timeline-sub">Jan 2014 &ndash; Present &middot; Tocancip&aacute;, Colombia</div>
-      <p>Network deployment and management. Intranet (Nextcloud) and ERP/CRM (Dolibarr) implementation via Docker Compose. WhatsApp chatbot development. SQL database management. Web development (Ruby on Rails, PHP, Angular, React). Azure AD administration. Recruiting and training.</p>
+      <p>Functional roles: QA Engineer, Software Developer, Systems Administrator, Network Administrator, Database Administrator/Data Modeler and IT Maintenance &amp; Support Engineer. Selected work includes the <strong>Lactolife eShop</strong>, <strong>Nextcloud intranet</strong>, <strong>Dolibarr ERP/CRM</strong> and a <strong>WhatsApp sales bot</strong>, alongside pre-deployment verification, SQL support, DNS/SMTP/VPN administration, Azure AD management and troubleshooting across hardware/software environments.</p>
     </div>
     <div class="timeline-item">
       <h3>English Teacher &mdash; Bibo Global Opportunity</h3>
@@ -653,9 +759,9 @@
   <section class="section" id="contact">
     <div class="section-title">Get in touch</div>
     <div class="contact-card">
-      <p>Looking for remote opportunities as QA Engineer, QA Automation or hybrid QA/Dev roles.<br>Let's talk.</p>
+      <p>Looking for remote opportunities as QA Engineer, QA Automation Engineer, Software Engineer, Systems Engineer or hybrid QA/Dev roles.<br>Let's talk.</p>
       <div class="contact-links">
-        <a class="contact-btn" href="mailto:morphineskynight@gmail.com">&#9993; Email me</a>
+        <a class="contact-btn" href="mailto:juancapitanig@gmail.com">&#9993; Email me</a>
         <a class="contact-btn secondary" href="https://www.linkedin.com/in/juan-capitani-84366182/" target="_blank">LinkedIn</a>
         <a class="contact-btn secondary" href="https://github.com/Morphined" target="_blank">GitHub</a>
       </div>
