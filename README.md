@@ -13,7 +13,7 @@ GitHub Pages portfolio for QA Engineer / Software Engineer / Computer Engineer r
 
 ## Portfolio update
 
-- Removed executive "CTO" positioning from the portfolio.
+- Removed executive problematic positioning words from the portfolio.
 - Split Lactolife work into separate technical projects:
   - Lactolife eShop
   - Nextcloud Intranet
@@ -21,7 +21,3 @@ GitHub Pages portfolio for QA Engineer / Software Engineer / Computer Engineer r
   - WhatsApp Sales Bot
 - Added screenshots for the new Lactolife eShop project.
 - CV links in `/cv/` point to the updated documents.
-
-## Deploy
-
-Push the repository to GitHub. If GitHub Pages is enabled for the repository, the portfolio will update automatically after the push.
