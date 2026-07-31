@@ -38,3 +38,10 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
   - Parche Dulcero: interactive multilingual educational website.
   - Lactolife.com: corporate marketing website and product catalog.
   - Lactolife eShop: online store platform.
+
+
+## EvenTickets update
+
+- Added EvenTickets as a ticket sales and event management web application case study.
+- Added screenshots for homepage, login, event creation, user registration and user profile editing.
+- The project highlights full stack development, forms, CRUD-style flows, user/account workflows and QA validation.
