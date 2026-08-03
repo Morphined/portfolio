@@ -37,3 +37,75 @@
   line-height: 1;
   white-space: nowrap;
 }
+
+
+/* v11 sectioned portfolio structure */
+.capability-map {
+  max-width: 1180px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: .75rem;
+}
+.capability-card {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  padding: 1rem;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(125,125,125,.18);
+  background: rgba(255,255,255,.045);
+}
+.capability-card:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.075);
+}
+.capability-card strong {
+  font-size: 1rem;
+}
+.capability-card span {
+  font-size: .86rem;
+  opacity: .8;
+  line-height: 1.35;
+}
+.portfolio-sectioned {
+  max-width: 1180px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.project-group {
+  margin: 1.5rem 0 2.25rem;
+}
+.project-group-header {
+  margin: 0 0 1rem;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid #0ea5a8;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+}
+.project-group-header h2 {
+  margin: 0 0 .25rem;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+}
+.project-group-header p {
+  margin: 0;
+  opacity: .82;
+  line-height: 1.4;
+}
+.project-group-systems .project-group-header {
+  border-left-color: #f59e0b;
+}
+.project-group-qa .project-group-header {
+  border-left-color: #8b5cf6;
+}
+.project-group-database .project-group-header {
+  border-left-color: #22c55e;
+}
+.project-group-software .project-group-header {
+  border-left-color: #38bdf8;
+}

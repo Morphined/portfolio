@@ -59,3 +59,16 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
 - Replaced portfolio CV PDFs with the updated English and Spanish versions dated 2026-08-03.
 - Added editable DOCX versions in `/cv/`.
 - Header CV links now include PDF and editable DOCX files in both languages.
+
+
+## v11 sectioned systems update
+
+- Reorganized projects into explicit sections: Web/UI, QA, Software, Systems Administration & Infrastructure, and Databases/Networks.
+- Made Linux & Windows Systems Administration visible as its own section with redacted infrastructure screenshots.
+- Added capability cards for faster navigation by skill area.
+
+
+## v14 public CV links
+
+- Removed editable DOCX CV files from the public portfolio package.
+- Kept only English and Spanish PDF CV links for public review.
