@@ -95,3 +95,11 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
 - Centered the active theme pill and theme selector on mobile.
 - Added subtle icons to focus chips, capability cards and section headers for faster visual scanning.
 - Kept theme logic, PDF-only CV links and collapsible project cards.
+
+
+## v23 fixed profile photo clean hero
+
+- Used the real profile photo asset: `img/profile.jpg`.
+- Replaced the old background-image hero with one explicit `<img>` inside the hero card.
+- Removed duplicate/outside theme controls and duplicate `about` ids.
+- QA checks verify a single hero, single profile image, single theme selector and PDF-only CV links.

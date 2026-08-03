@@ -510,3 +510,215 @@ section {
     align-items: flex-start;
   }
 }
+
+
+/* v23 fixed profile photo clean hero */
+.hero-clean-v23 {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem) clamp(1.75rem, 4vw, 3rem);
+}
+
+.hero-card-v23 {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.6rem, 4vw, 3rem);
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.hero-media-v23 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-avatar-v23 {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .16);
+}
+
+.hero-content-v23 {
+  min-width: 0;
+  text-align: left;
+}
+
+.hero-kicker-v23 {
+  margin: 0 0 .35rem;
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+
+.hero-content-v23 h1 {
+  margin: 0 0 .65rem;
+  text-align: left;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.hero-summary-v23 {
+  max-width: 680px;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  line-height: 1.55;
+  text-align: left;
+}
+
+.hero-skills-v23 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin: 0 0 1.1rem;
+}
+
+.hero-skills-v23 span {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .5rem .72rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: .92rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hero-theme-v23 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .7rem;
+  margin: .1rem 0 1rem;
+}
+
+.hero-theme-v23 .theme-status {
+  display: inline-flex;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.hero-theme-v23 .theme-toggle {
+  display: inline-flex;
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  justify-content: flex-start !important;
+  box-shadow: none;
+}
+
+.hero-actions-v23 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.hero-actions-v23 a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.15rem;
+  padding: .45rem .72rem;
+  border: 1px solid var(--border);
+  border-radius: .65rem;
+  background: var(--surface);
+  color: var(--muted);
+  text-decoration: none;
+  line-height: 1;
+  font-size: .9rem;
+}
+
+.hero-actions-v23 a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+@media (max-width: 760px) {
+  .hero-clean-v23 {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .hero-card-v23 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.15rem;
+    border-radius: 24px;
+    text-align: center;
+  }
+
+  .hero-avatar-v23 {
+    width: 118px;
+    height: 118px;
+    border-radius: 20px;
+  }
+
+  .hero-content-v23,
+  .hero-content-v23 h1,
+  .hero-summary-v23,
+  .hero-kicker-v23 {
+    text-align: center;
+  }
+
+  .hero-skills-v23,
+  .hero-theme-v23,
+  .hero-actions-v23 {
+    justify-content: center;
+  }
+
+  .hero-theme-v23 {
+    flex-direction: column;
+    gap: .65rem;
+  }
+
+  .hero-theme-v23 .theme-status,
+  .hero-theme-v23 .theme-toggle {
+    justify-content: center !important;
+  }
+
+  .hero-skills-v23 span {
+    font-size: .88rem;
+    padding: .42rem .6rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-card-v23 {
+    padding: 1rem;
+  }
+
+  .hero-skills-v23 {
+    gap: .45rem;
+  }
+
+  .hero-skills-v23 span {
+    white-space: normal;
+  }
+
+  .hero-actions-v23 a {
+    flex: 1 1 calc(50% - .55rem);
+  }
+
+  .hero-actions-v23 a:first-child {
+    flex-basis: 100%;
+  }
+}
