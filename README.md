@@ -88,3 +88,10 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
 - Theme choice persists in `localStorage`.
 - System mode still follows `prefers-color-scheme`.
 - Improved padding and spacing in role cards, project cards, education cards, grids and portfolio sections.
+
+
+## v17 mobile centering and icons update
+
+- Centered the active theme pill and theme selector on mobile.
+- Added subtle icons to focus chips, capability cards and section headers for faster visual scanning.
+- Kept theme logic, PDF-only CV links and collapsible project cards.

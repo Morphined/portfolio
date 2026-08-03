@@ -422,3 +422,91 @@ section {
     flex: 1;
   }
 }
+
+
+/* v17 mobile theme centering and subtle visual icons */
+.theme-status {
+  display: flex;
+  width: fit-content;
+  max-width: calc(100% - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-focus-strip span {
+  gap: .35rem;
+}
+
+.chip-icon {
+  display: inline-flex;
+  line-height: 1;
+  font-size: .95em;
+}
+
+.capability-card {
+  position: relative;
+}
+
+.capability-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: .2rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  font-size: 1rem;
+}
+
+.project-group-header h2 {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+}
+
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.05rem;
+  height: 2.05rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  font-size: 1rem;
+}
+
+@media (max-width: 720px) {
+  .theme-status {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  .theme-status + .theme-toggle,
+  .theme-toggle {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  .hero-focus-strip {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+
+  .hero-focus-strip span {
+    justify-content: center;
+  }
+
+  .project-group-header h2 {
+    align-items: flex-start;
+  }
+}
