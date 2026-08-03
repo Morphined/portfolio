@@ -1,0 +1,13 @@
+{
+  "name": "juan-capitani-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio with responsive UI, automatic light/dark themes and TypeScript source.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build:ts": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}

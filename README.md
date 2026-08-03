@@ -72,3 +72,19 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
 
 - Removed editable DOCX CV files from the public portfolio package.
 - Kept only English and Spanish PDF CV links for public review.
+
+
+## v15 automatic light/dark theme update
+
+- Added automatic light/dark theme support using CSS variables and `prefers-color-scheme`.
+- Added a small JavaScript runtime to detect and label the active system theme.
+- Added TypeScript source in `src/theme.ts` plus `tsconfig.json` and `package.json` to show typed front-end work in the repository.
+- Kept the public CV links as PDF only.
+
+
+## v16 manual theme toggle and spacing update
+
+- Added a manual theme selector: System, Light and Dark.
+- Theme choice persists in `localStorage`.
+- System mode still follows `prefers-color-scheme`.
+- Improved padding and spacing in role cards, project cards, education cards, grids and portfolio sections.
