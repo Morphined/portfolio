@@ -45,3 +45,17 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
 - Added EvenTickets as a ticket sales and event management web application case study.
 - Added screenshots for homepage, login, event creation, user registration and user profile editing.
 - The project highlights full stack development, forms, CRUD-style flows, user/account workflows and QA validation.
+
+
+## v8 navigation and infrastructure update
+
+- Added skill/theme filters and expand/collapse behavior for project cards.
+- Added favicon for presentation polish.
+- Added redacted Linux VPS administration screenshots and infrastructure project.
+
+
+## v9 CV update
+
+- Replaced portfolio CV PDFs with the updated English and Spanish versions dated 2026-08-03.
+- Added editable DOCX versions in `/cv/`.
+- Header CV links now include PDF and editable DOCX files in both languages.
