@@ -305,13 +305,13 @@
 <h2>Browse by project type</h2>
 </div>
 <div aria-label="Project filters" class="filter-actions" role="group">
-<button class="filter-btn is-active" data-filter="all">All</button>
-<button class="filter-btn" data-filter="web">Web / UI</button>
-<button class="filter-btn" data-filter="qa">QA / Testing</button>
-<button class="filter-btn" data-filter="software">Software</button>
-<button class="filter-btn" data-filter="systems">Systems / Infrastructure</button>
-<button class="filter-btn" data-filter="database">Databases</button>
-<button class="filter-btn" data-filter="automation">Automation</button>
+<button class="filter-btn is-active" data-filter="all" type="button">All</button>
+<button class="filter-btn" data-filter="web" type="button">Web / UI</button>
+<button class="filter-btn" data-filter="qa" type="button">QA / Testing</button>
+<button class="filter-btn" data-filter="software" type="button">Software</button>
+<button class="filter-btn" data-filter="systems" type="button">Systems / Infrastructure</button>
+<button class="filter-btn" data-filter="database" type="button">Databases</button>
+<button class="filter-btn" data-filter="automation" type="button">Automation</button>
 </div>
 <div class="utility-actions">
 <button class="utility-btn" id="expand-all" type="button">Expand all</button>
@@ -398,7 +398,7 @@
 <!-- QA PROJECTS -->
 <!-- DEV & INFRA PROJECTS -->
 <!-- EXPERIENCE -->
-<section class="portfolio-sectioned" id="portfolio-projects"><div class="section-title">Selected Work by Area</div><section class="project-group project-group-web" id="web-ui"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">🎨</span><span>Web/UI Design &amp; Front-End</span></h2><p>Live websites, product pages, multilingual content, e-commerce interfaces and responsive UI work.</p></div><div class="projects-grid"><div class="project-card" data-tags="automation software web web ui design frontend">
+<section class="portfolio-sectioned" id="portfolio-projects"><div class="section-title">Selected Work by Area</div><section class="project-group project-group-web" data-category="web" id="web-ui"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">🎨</span><span>Web/UI Design &amp; Front-End</span></h2><p>Live websites, product pages, multilingual content, e-commerce interfaces and responsive UI work.</p></div><div class="projects-grid"><div class="project-card" data-tags="automation software web web ui design frontend">
 <div class="project-body">
 <div class="project-label">Web Design · Front-End · Multilingual</div>
 <h3>Parche Dulcero — Interactive Harm Reduction Website</h3><button aria-expanded="false" class="project-toggle" type="button">View details</button><div class="project-content" hidden="">
@@ -472,7 +472,7 @@
 <span class="tool-badge green">PostgreSQL</span>
 </div>
 </div></div>
-</div></div></section><section class="project-group project-group-qa" id="qa-testing"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">🧪</span><span>QA Engineering &amp; Test Automation</span></h2><p>Manual QA, API testing, Selenium automation, regression checks, bug documentation and UI validation.</p></div><div class="projects-grid"><div class="project-card" data-tags="automation qa software web qa testing automation">
+</div></div></section><section class="project-group project-group-qa" data-category="qa" id="qa-testing"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">🧪</span><span>QA Engineering &amp; Test Automation</span></h2><p>Manual QA, API testing, Selenium automation, regression checks, bug documentation and UI validation.</p></div><div class="projects-grid"><div class="project-card" data-tags="automation qa software web qa testing automation">
 <div class="project-body">
 <div class="project-label">Automation · E2E</div>
 <h3>Selenium UI Automation — Page Object Model</h3><button aria-expanded="false" class="project-toggle" type="button">View details</button><div class="project-content" hidden="">
@@ -636,7 +636,37 @@
 <span class="tool-badge green">Jira</span>
 </div>
 </div></div>
-</div></div></section><section class="project-group project-group-software" id="software-apps"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">💻</span><span>Software Development &amp; Business Apps</span></h2><p>Full-stack applications, Python/Java-style business logic, automation tools and transactional web systems.</p></div><div class="projects-grid"><div class="project-card" data-tags="automation software web software development app">
+</div></div></section><section class="project-group project-group-software" data-category="software" id="software-apps"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">💻</span><span>Software Development &amp; Business Apps</span></h2><p>Full-stack applications, Python/Java-style business logic, automation tools and transactional web systems.</p></div><div class="projects-grid"><div class="project-card biometric-project-card" data-tags="software systems database automation python linux qa">
+<div class="project-body">
+<div class="project-label">Python · OpenCV · Face Recognition · SQLite · Linux</div>
+<h3>Biometric Time Clock — Facial Recognition Attendance System</h3>
+<button aria-expanded="false" class="project-toggle" type="button">View details</button>
+<div class="project-content" hidden="">
+<p class="project-desc">Built a production-ready biometric attendance kiosk for Lactolife using real-time facial recognition. The system identifies employees through the camera and automatically registers entry or exit with exact time, reducing manual attendance control and removing the need for cards, PINs or manual logging.</p>
+<p class="project-desc">Implemented a full-screen kiosk UI, employee management, attendance history, role-based administration, password management, automatic duplicate prevention, lateness calculation and Excel report exports for daily, weekly, monthly and custom date ranges.</p>
+<div class="project-gallery biometric-gallery">
+<img alt="Biometric time clock kiosk view waiting for face recognition" src="img/biometric-clock-kiosk.png"/>
+<img alt="Administration panel showing attendance records with date, employee, entry and exit type" src="img/biometric-clock-attendance.png"/>
+<img alt="Reports panel for daily weekly monthly and custom Excel exports" src="img/biometric-clock-reports.png"/>
+<img alt="Password management panel for Superadmin and HR roles" src="img/biometric-clock-passwords.png"/>
+</div>
+<div class="tool-row" style="margin-top:.7rem;">
+<span class="tool-badge">Python 3.12</span>
+<span class="tool-badge">OpenCV</span>
+<span class="tool-badge">face_recognition</span>
+<span class="tool-badge">dlib</span>
+<span class="tool-badge">customtkinter</span>
+<span class="tool-badge">SQLite</span>
+<span class="tool-badge">openpyxl</span>
+<span class="tool-badge">Linux</span>
+<span class="tool-badge">Cron Backups</span>
+</div>
+<div class="project-links" style="margin-top:.75rem;">
+<a href="https://github.com/Morphined/reloj-biometrico" rel="noopener noreferrer" target="_blank">View GitHub repository</a>
+</div>
+</div>
+</div>
+</div><div class="project-card" data-tags="automation software web software development app">
 <div class="project-body">
 <div class="project-label">Automation · Node.js</div>
 <h3>WhatsApp Sales Bot — Orders, Catalog &amp; Support</h3><button aria-expanded="false" class="project-toggle" type="button">View details</button><div class="project-content" hidden="">
@@ -719,7 +749,7 @@
 <span class="tool-badge green">Inheritance</span>
 </div>
 </div></div>
-</div></div></section><section class="project-group project-group-systems" id="systems-infra"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">🖥️</span><span>Systems Administration &amp; Infrastructure</span></h2><p>Linux/Windows administration, Ubuntu VPS, Docker, hosting panels, networks, services, logs, security and troubleshooting.</p></div><div class="projects-grid"><div class="project-card" data-tags="systems infra linux windows docker server administration">
+</div></div></section><section class="project-group project-group-systems" data-category="systems" id="systems-infra"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">🖥️</span><span>Systems Administration &amp; Infrastructure</span></h2><p>Linux/Windows administration, Ubuntu VPS, Docker, hosting panels, networks, services, logs, security and troubleshooting.</p></div><div class="projects-grid"><div class="project-card" data-tags="systems infra linux windows docker server administration">
 <div class="project-body">
 <div class="project-label">Systems Administration · Linux/Windows · Docker · VPS</div>
 <h3>Linux &amp; Windows Systems Administration — Ubuntu VPS Infrastructure</h3><button aria-expanded="false" class="project-toggle" type="button">View details</button><div class="project-content" hidden="">
@@ -787,7 +817,7 @@
 <span class="tool-badge">Routing</span>
 </div>
 </div></div>
-</div></div></section><section class="project-group project-group-database" id="data-networks"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">🗄️</span><span>Databases, Data Modeling &amp; Networks</span></h2><p>Relational modeling, SQL schemas, constraints, database design and network architecture projects.</p></div><div class="projects-grid"><div class="project-card" data-tags="automation database database data sql">
+</div></div></section><section class="project-group project-group-database" data-category="database" id="data-networks"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">🗄️</span><span>Databases, Data Modeling &amp; Networks</span></h2><p>Relational modeling, SQL schemas, constraints, database design and network architecture projects.</p></div><div class="projects-grid"><div class="project-card" data-tags="automation database database data sql">
 <div class="project-body">
 <div class="project-label">Database · SQL</div>
 <h3>Database Design — Logistics Company (Oracle SQL / 3NF)</h3><button aria-expanded="false" class="project-toggle" type="button">View details</button><div class="project-content" hidden="">

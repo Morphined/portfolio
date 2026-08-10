@@ -103,3 +103,18 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
 - Replaced the old background-image hero with one explicit `<img>` inside the hero card.
 - Removed duplicate/outside theme controls and duplicate `about` ids.
 - QA checks verify a single hero, single profile image, single theme selector and PDF-only CV links.
+
+
+## v24 biometric time clock project
+
+- Added Biometric Time Clock — Facial Recognition Attendance System.
+- Included portfolio-ready screenshots for kiosk, attendance, reports and password management.
+- Added GitHub link: https://github.com/Morphined/reloj-biometrico
+- Highlighted Python, OpenCV, face_recognition, dlib, customtkinter, SQLite, openpyxl, Linux and cron backups.
+
+
+## v25 fixed filters
+
+- Fixed portfolio filter buttons.
+- Filters now show/hide project sections by category and scroll to the selected section.
+- Automation filter shows only automation-tagged cards across sections.

@@ -722,3 +722,40 @@ section {
     flex-basis: 100%;
   }
 }
+
+
+/* v24 biometric time clock project */
+.biometric-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: .9rem;
+  margin-top: .75rem;
+}
+.biometric-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border, rgba(125,125,125,.25));
+  object-fit: cover;
+}
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .5rem .75rem;
+  border-radius: .65rem;
+  border: 1px solid var(--border, rgba(125,125,125,.25));
+  text-decoration: none;
+}
+
+
+/* v25 filter visibility and scroll alignment */
+.project-group.is-hidden,
+.project-card.is-hidden {
+  display: none !important;
+}
+
+.project-group,
+.portfolio-sectioned {
+  scroll-margin-top: 90px;
+}

@@ -58,3 +58,79 @@ document.addEventListener("DOMContentLoaded",()=>{const cards=[...document.query
 
   applyTheme(getStoredChoice());
 })();
+
+
+// v25 robust portfolio filters: filter by project sections and scroll to selected section
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+  const groups = Array.from(document.querySelectorAll(".project-group"));
+  const cards = Array.from(document.querySelectorAll(".project-card"));
+
+  const groupByFilter = {
+    web: "web-ui",
+    qa: "qa-testing",
+    software: "software-apps",
+    systems: "systems-infra",
+    database: "data-networks"
+  };
+
+  function setActiveButton(filter) {
+    filterButtons.forEach((button) => {
+      button.classList.toggle("is-active", button.dataset.filter === filter);
+    });
+  }
+
+  function showAll() {
+    groups.forEach((group) => group.classList.remove("is-hidden"));
+    cards.forEach((card) => card.classList.remove("is-hidden"));
+  }
+
+  function filterPortfolio(filter, shouldScroll = true) {
+    setActiveButton(filter);
+
+    if (filter === "all") {
+      showAll();
+      const section = document.getElementById("portfolio-projects") || document.querySelector(".portfolio-sectioned");
+      if (shouldScroll && section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    if (filter === "automation") {
+      groups.forEach((group) => group.classList.remove("is-hidden"));
+      cards.forEach((card) => {
+        const tags = (card.dataset.tags || "").split(/\s+/);
+        card.classList.toggle("is-hidden", !tags.includes("automation"));
+      });
+
+      groups.forEach((group) => {
+        const visibleCards = Array.from(group.querySelectorAll(".project-card")).some((card) => !card.classList.contains("is-hidden"));
+        group.classList.toggle("is-hidden", !visibleCards);
+      });
+
+      const firstVisible = document.querySelector(".project-group:not(.is-hidden)");
+      if (shouldScroll && firstVisible) firstVisible.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    groups.forEach((group) => {
+      group.classList.toggle("is-hidden", group.dataset.category !== filter);
+    });
+    cards.forEach((card) => card.classList.remove("is-hidden"));
+
+    const targetId = groupByFilter[filter];
+    const target = targetId ? document.getElementById(targetId) : document.querySelector(`.project-group[data-category="${filter}"]`);
+    if (shouldScroll && target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      const filter = button.dataset.filter || "all";
+      filterPortfolio(filter, true);
+    }, true);
+  });
+
+  // Make the helper available for quick manual QA in DevTools.
+  window.portfolioFilter = filterPortfolio;
+});
