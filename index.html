@@ -636,7 +636,7 @@
 <span class="tool-badge green">Jira</span>
 </div>
 </div></div>
-</div></div></section><section class="project-group project-group-software" data-category="software" id="software-apps"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">💻</span><span>Software Development &amp; Business Apps</span></h2><p>Full-stack applications, Python/Java-style business logic, automation tools and transactional web systems.</p></div><div class="projects-grid"><div class="project-card biometric-project-card" data-tags="software systems database automation python linux qa">
+</div></div></section><section class="project-group project-group-software" data-category="software" id="software-apps"><div class="project-group-header"><h2><span aria-hidden="true" class="section-icon">💻</span><span>Software Development &amp; Business Apps</span></h2><p>Full-stack and desktop applications, backend reliability, AI automation, business logic and transactional systems.</p></div><div class="projects-grid"><div class="project-card biometric-project-card" data-tags="software systems database automation python linux qa">
 <div class="project-body">
 <div class="project-label">Python · OpenCV · Face Recognition · SQLite · Linux</div>
 <h3>Biometric Time Clock — Facial Recognition Attendance System</h3>
@@ -663,6 +663,58 @@
 </div>
 <div class="project-links" style="margin-top:.75rem;">
 <a href="https://github.com/Morphined/reloj-biometrico" rel="noopener noreferrer" target="_blank">View GitHub repository</a>
+</div>
+</div>
+</div>
+</div><div class="project-card reliable-webhook-project" data-tags="automation qa software database api backend python fastapi reliability">
+<div class="project-body">
+<div class="project-label">Backend Reliability · FastAPI · Webhooks · PostgreSQL</div>
+<h3>Reliable Lead Webhook Demo — Idempotency, Retries &amp; Audit Lineage</h3>
+<button aria-expanded="false" class="project-toggle" type="button">View details</button>
+<div class="project-content" hidden="">
+<p class="project-desc">Built a reliability-focused webhook service that validates incoming leads, enriches company data, sends records to a mock CRM and persists the complete processing lineage. The design prevents duplicate side effects with durable idempotency and records every upstream attempt for troubleshooting and auditability.</p>
+<p class="project-desc">Implemented bounded retries with exponential backoff, explicit retry for failed events, terminal failure alert records, deterministic mock APIs and automated coverage for success, duplicate delivery, transient recovery, hard failure and validation scenarios. Local verification completed successfully with 7 pytest tests passing.</p>
+<div class="project-gallery cols-1">
+<img alt="Runtime evidence for the webhook demo showing a transient HTTP 503 failure sequence recovering successfully and persistent attempt history" src="img/webhook-runtime.png"/>
+</div>
+<div class="project-links"><a href="https://github.com/Morphined/reliable-lead-webhook-demo" rel="noopener noreferrer" target="_blank">&lt;/&gt; View on GitHub</a></div>
+<div class="tool-row" style="margin-top:.6rem;">
+<span class="tool-badge">Python</span><span class="tool-badge">FastAPI</span><span class="tool-badge">Pydantic</span><span class="tool-badge">SQLAlchemy</span><span class="tool-badge">PostgreSQL</span><span class="tool-badge">SQLite</span><span class="tool-badge green">Idempotency</span><span class="tool-badge green">Retries</span><span class="tool-badge orange">pytest</span><span class="tool-badge">Docker</span>
+</div>
+</div>
+</div>
+</div><div class="project-card product-photo-pipeline-project" data-tags="automation software ai python computer-vision image-processing workflow qa">
+<div class="project-body">
+<div class="project-label">AI Automation · Computer Vision · Product Photography</div>
+<h3>Product Photo Pipeline V1 — Automated Commercial Image Workflow</h3>
+<button aria-expanded="false" class="project-toggle" type="button">View details</button>
+<div class="project-content" hidden="">
+<p class="project-desc">Designed a private production-oriented orchestration pipeline for commercial product photography. The workflow combines SAM 3.1 segmentation, mask QA and fallback logic, scene/category routing, Qwen Image Edit background generation, edge-aware exact foreground restoration, automated image metrics, review galleries and mandatory human approval.</p>
+<p class="project-desc">The source repository intentionally excludes model weights, customer images and generated commercial outputs. The portfolio image below is a synthetic, portfolio-safe demonstration generated with the project’s own foreground-restoration, metrics and review-grid utilities; it does not expose client assets.</p>
+<div class="project-gallery cols-1">
+<img alt="Synthetic review-grid demonstration generated with Product Photo Pipeline utilities showing original, mask QA, raw background edit and exact foreground restoration" src="img/product-pipeline-review.jpg"/>
+</div>
+<div class="tool-row" style="margin-top:.6rem;">
+<span class="tool-badge">Python</span><span class="tool-badge">OpenCV</span><span class="tool-badge">Pillow</span><span class="tool-badge">NumPy</span><span class="tool-badge green">SAM 3.1</span><span class="tool-badge green">Qwen Image Edit</span><span class="tool-badge">ComfyUI</span><span class="tool-badge orange">Mask QA</span><span class="tool-badge orange">Human Review</span>
+</div>
+<p class="project-desc" style="margin-top:.7rem;"><strong>Repository:</strong> private / proprietary by design.</p>
+</div>
+</div>
+</div><div class="project-card sabor-sazon-project" data-tags="software python desktop gui qa testing business-app">
+<div class="project-body">
+<div class="project-label">Python 3.12 · Tkinter · Desktop Business App</div>
+<h3>Sabor &amp; Sazón — Gastronomic Client &amp; Service Management</h3>
+<button aria-expanded="false" class="project-toggle" type="button">View details</button>
+<div class="project-content" hidden="">
+<p class="project-desc">Developed a desktop application for gastronomic customer registration and service calculation. The application includes masked password access, customer data validation, menu selection, automatic per-session pricing, session-based total calculation and a complete service report.</p>
+<p class="project-desc">Separated business logic, configuration and validation into dedicated modules, added keyboard shortcuts and responsive desktop layouts, and included automated unit testing for the service calculation model. The current portfolio build was executed in a clean environment and the included unit test passed successfully.</p>
+<div class="project-gallery">
+<img alt="Sabor y Sazón secure access screen" src="img/sabor-login.png"/>
+<img alt="Sabor y Sazón customer registration screen with automatic menu pricing and service summary" src="img/sabor-registration.png"/>
+<img alt="Sabor y Sazón generated service report" src="img/sabor-report.png"/>
+</div>
+<div class="tool-row" style="margin-top:.6rem;">
+<span class="tool-badge">Python 3.12</span><span class="tool-badge">Tkinter</span><span class="tool-badge green">Validation</span><span class="tool-badge green">Business Logic</span><span class="tool-badge orange">unittest</span><span class="tool-badge">Desktop UI</span>
 </div>
 </div>
 </div>
