@@ -136,3 +136,9 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
 - Added restrained category accents for Web/UI, QA, Software, Systems and Data.
 - Improved mobile behavior for hero actions, theme controls, filters, featured work and project galleries.
 - Preserved automatic system theme detection plus manual System / Light / Dark selection.
+
+## v31 — Bilingual portfolio
+- Restored full English/Spanish site support.
+- `index.html` is the English version and `es.html` is the Spanish version.
+- Added a persistent EN/ES switcher in the top navigation, including mobile.
+- Both language versions share the same styles, scripts, project filters, theme controller, search, sticky project navigator and current portfolio structure.
