@@ -127,3 +127,12 @@ GitHub Pages portfolio for Web Designer / Front-End Developer / QA Engineer / So
 - Added Sabor & Sazón Python/Tkinter desktop business application with locally captured access, registration and report screens.
 - Reconfirmed project cards are collapsed by default and compatible with Software / Automation filters.
 - Removed editable DOCX CV files from the public package; public CVs remain PDF-only.
+
+## v27 — Editorial redesign
+- Reworked the visual system around a warm paper / ink / indigo palette with a coordinated dark theme.
+- Added an editorial hero treatment with stronger hierarchy and responsive spacing.
+- Added a Featured Case Studies section for Parche Dulcero, Lactolife.com and Lactolife eShop.
+- Refined Role Focus, filters, project groups, cards, badges and contact sections.
+- Added restrained category accents for Web/UI, QA, Software, Systems and Data.
+- Improved mobile behavior for hero actions, theme controls, filters, featured work and project galleries.
+- Preserved automatic system theme detection plus manual System / Light / Dark selection.
